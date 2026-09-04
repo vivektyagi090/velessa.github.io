@@ -1,0 +1,58 @@
+import { CategoryInfo } from '../types/product';
+
+export const CATEGORIES: CategoryInfo[] = [
+  {
+    id: 'rings',
+    name: 'Rings',
+    slug: 'rings',
+    description: 'Sculptural solitaires, diamond eternity bands, and bespoke cocktail rings.',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80',
+    itemCount: 8,
+    startingPrice: 380,
+  },
+  {
+    id: 'necklaces',
+    name: 'Necklaces',
+    slug: 'necklaces',
+    description: 'Cascading diamond collarettes, fluid yellow gold chokers, and subtle everyday chains.',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80',
+    itemCount: 6,
+    startingPrice: 450,
+  },
+  {
+    id: 'earrings',
+    name: 'Earrings',
+    slug: 'earrings',
+    description: 'Lustrous south sea pearl drops, diamond pavé hugs, and bold sculptural hoops.',
+    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80',
+    itemCount: 7,
+    startingPrice: 290,
+  },
+  {
+    id: 'bracelets',
+    name: 'Bracelets',
+    slug: 'bracelets',
+    description: 'Tennis bracelets of uninterrupted fire, delicate chain links, and diamond cuffs.',
+    image: 'https://images.unsplash.com/photo-1611591475825-9276c1f76d45?auto=format&fit=crop&w=900&q=80',
+    itemCount: 5,
+    startingPrice: 520,
+  },
+  {
+    id: 'bangles',
+    name: 'Bangles',
+    slug: 'bangles',
+    description: 'Hand-carved 18k gold torque bangles, hinged diamond bands, and layered wrist statements.',
+    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80',
+    itemCount: 4,
+    startingPrice: 680,
+  },
+  {
+    id: 'pendants',
+    name: 'Pendants',
+    slug: 'pendants',
+    description: 'Astronomical talismans, bezel-set solitaire emeralds, and architectural medallions.',
+    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80',
+    itemCount: 5,
+    startingPrice: 340,
+  },
+];
