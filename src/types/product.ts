@@ -63,7 +63,6 @@ export interface Product {
   isNew?: boolean;
   isBestSeller?: boolean;
   isFeatured?: boolean;
-  festiveTag?: string;
   inStock: boolean;
   gemstone?: string;
   karat?: string;

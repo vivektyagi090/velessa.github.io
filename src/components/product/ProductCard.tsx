@@ -79,14 +79,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Badges Overlay */}
         <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10 pointer-events-none">
-          {product.festiveTag && (
-            <Badge variant="festive" className="!text-[9px] !tracking-[0.15em] flex items-center gap-1 shadow-sm">
-              <span>🌺</span>
-              <span>{product.festiveTag}</span>
-            </Badge>
-          )}
-          {product.isNew && <Badge variant="charcoal">New Arrival</Badge>}
-          {product.isBestSeller && !product.festiveTag && <Badge variant="gold">Best Seller</Badge>}
+          {product.isNew && <Badge variant="charcoal">New</Badge>}
+          {product.isBestSeller && <Badge variant="gold">Best Seller</Badge>}
           {discount > 0 && <Badge variant="sale">-{discount}%</Badge>}
           {!product.inStock && <Badge variant="subtle">Pre-Order</Badge>}
         </div>
