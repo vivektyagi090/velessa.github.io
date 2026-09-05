@@ -32,32 +32,29 @@ export const BrandStorySection: React.FC = () => {
             {/* Golden decorative accent badge */}
             <div className="absolute -top-4 -left-4 z-20 hidden sm:flex items-center gap-2 px-4 py-2 bg-charcoal text-champagne border border-champagne/40 rounded-full text-xs font-sans tracking-widest uppercase">
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Milan Atelier</span>
+              <span>1 Gram Gold Atelier</span>
             </div>
           </div>
 
           {/* Right Editorial Story Text */}
           <div className="lg:col-span-6 space-y-6 pt-6 lg:pt-0">
             <span className="text-[11px] uppercase tracking-[0.3em] text-champagne font-sans font-medium block">
-              The Maison Heritage
+              The Velessa Craft
             </span>
 
             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-light text-charcoal leading-[1.18] tracking-tight">
-              Jewellery that celebrates <br />
-              <span className="italic font-normal gold-gradient-text">every version of you.</span>
+              The Grandeur of Gold, <br />
+              <span className="italic font-normal gold-gradient-text">Made for Modern Life.</span>
             </h2>
 
             <div className="w-16 h-[1px] bg-champagne" />
 
             <p className="text-sm sm:text-base text-charcoal-muted font-sans font-light leading-relaxed">
-              Founded on the belief that luxury should be both sublime and intimately personal,
-              Velessa marries ancestral European goldsmith traditions with clean, contemporary architecture.
+              Founded to redefine Indian fashion jewellery, Velessa bridges royal Indian heritage with precision 1-Gram Gold Forming micro-technology. We bring you the unmistakable look, reassuring weight, and warm sheen of 22K pure gold.
             </p>
 
             <p className="text-sm sm:text-base text-charcoal-muted font-sans font-light leading-relaxed">
-              Every ring, collarette, and cuff is sculpted from ethically cast 18k solid gold and
-              hand-selected diamonds possessing rare fire. We do not design for temporary seasons;
-              we forge modern heirlooms destined to be treasured across lifetimes.
+              From royal bridal Kundan chokers and temple harams to anti-tarnish daily wear mangalsutras and sparkling American Diamond rings, each piece is cast over skin-safe copper-brass alloys and protected by an advanced anti-tarnish shield.
             </p>
 
             <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">

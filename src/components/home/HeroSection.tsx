@@ -23,19 +23,19 @@ export const HeroSection: React.FC = () => {
         {/* Kicker badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal/60 backdrop-blur-md border border-champagne/40 text-[11px] font-sans uppercase tracking-[0.3em] text-champagne mb-6">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>Haute Joaillerie & Fine Heirlooms</span>
+          <span>1 Gram Gold Forming & Premium Imitation</span>
         </div>
 
         {/* Elegant Headline */}
         <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1.08] text-ivory mb-6 max-w-4xl mx-auto">
-          Timeless Elegance, <br className="hidden sm:inline" />
-          <span className="italic font-normal gold-gradient-text">Made to Be Yours.</span>
+          Real 22K Gold Look, <br className="hidden sm:inline" />
+          <span className="italic font-normal gold-gradient-text">1 Gram Gold Forming.</span>
         </h1>
 
         {/* Short Brand Description */}
         <p className="max-w-2xl mx-auto text-sm sm:text-base md:text-lg font-sans font-light text-ivory/85 leading-relaxed tracking-wide mb-10">
-          Handcrafted fine jewellery sculpted in solid 18k gold and ethical diamonds.
-          Designed to transcend ephemeral trends and celebrate every version of you.
+          Handcrafted 1 Gram Gold Forming, royal Kundan chokers, and American Diamond jewellery.
+          Indistinguishable from hallmarked gold with long-lasting anti-tarnish guarantee.
         </p>
 
         {/* CTAs */}

@@ -28,9 +28,9 @@ export const Footer: React.FC = () => {
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif text-base text-ivory tracking-wide">Artisanal Mastery</h4>
+              <h4 className="font-serif text-base text-ivory tracking-wide">1 Gram Gold Forming</h4>
               <p className="text-xs text-ivory/60 font-sans mt-1 leading-relaxed">
-                Individually handcrafted in 18k solid gold and platinum.
+                Looks 100% like real 22k gold with high-density micro plating.
               </p>
             </div>
           </div>
@@ -40,9 +40,9 @@ export const Footer: React.FC = () => {
               <Truck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif text-base text-ivory tracking-wide">Insured Express</h4>
+              <h4 className="font-serif text-base text-ivory tracking-wide">Pan-India Delivery & COD</h4>
               <p className="text-xs text-ivory/60 font-sans mt-1 leading-relaxed">
-                White-glove armored courier delivery worldwide.
+                Express insured shipping with Cash on Delivery available.
               </p>
             </div>
           </div>
@@ -52,9 +52,9 @@ export const Footer: React.FC = () => {
               <RefreshCw className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif text-base text-ivory tracking-wide">30-Day Returns</h4>
+              <h4 className="font-serif text-base text-ivory tracking-wide">Anti-Tarnish Guarantee</h4>
               <p className="text-xs text-ivory/60 font-sans mt-1 leading-relaxed">
-                Complimentary resizing and seamless return privileges.
+                Sweat-proof nano-lacquer protection for enduring polish.
               </p>
             </div>
           </div>
@@ -64,9 +64,9 @@ export const Footer: React.FC = () => {
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-serif text-base text-ivory tracking-wide">Ethical Sourcing</h4>
+              <h4 className="font-serif text-base text-ivory tracking-wide">Skin-Safe & Hypoallergenic</h4>
               <p className="text-xs text-ivory/60 font-sans mt-1 leading-relaxed">
-                100% conflict-free diamonds and recycled precious metals.
+                100% lead and nickel-free brass alloys for sensitive skin.
               </p>
             </div>
           </div>
@@ -82,12 +82,12 @@ export const Footer: React.FC = () => {
               <span className="font-serif text-3xl tracking-[0.28em] font-light text-ivory">
                 VELESSA
               </span>
-              <span className="text-[10px] uppercase tracking-[0.35em] text-champagne font-sans font-medium">
-                Haute Joaillerie
+              <span className="text-[10px] uppercase tracking-[0.3em] text-champagne font-sans font-medium">
+                1 Gram Gold & Imitation Jewellery
               </span>
             </div>
             <p className="text-sm text-ivory/70 font-sans leading-relaxed max-w-sm">
-              Conceived in the pursuit of eternal beauty. Velessa sculpts fine jewellery celebrating life’s transcendent milestones, modern self-expression, and quiet luxury.
+              The splendor of 22k gold, royal Kundan chokers, and American Diamond solitaires, crafted with precision 1-Gram Gold Forming micro-technology.
             </p>
             {/* Social Icons */}
             <div className="flex items-center space-x-4 text-ivory/70">

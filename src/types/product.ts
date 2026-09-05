@@ -1,9 +1,11 @@
 export type ProductCategory = 
-  | 'Rings' 
+  | '1 Gram Gold Forming'
   | 'Necklaces' 
   | 'Earrings' 
-  | 'Bracelets' 
   | 'Bangles' 
+  | 'Mangalsutras'
+  | 'Rings' 
+  | 'Bracelets' 
   | 'Pendants';
 
 export type ProductCollection = 
@@ -16,6 +18,14 @@ export type ProductCollection =
   | 'New Arrivals';
 
 export type MetalType = 
+  | '1 Gram Gold Forming' 
+  | '24k Micro Gold Plated'
+  | 'Antique Matte Gold'
+  | 'American Diamond (AD)'
+  | 'Kundan & Meenakari'
+  | 'Rose Gold Polish'
+  | 'Rhodium & Silver Polish'
+  | 'Brass & Copper Alloy Base'
   | '18k Yellow Gold' 
   | '18k Rose Gold' 
   | '18k White Gold' 

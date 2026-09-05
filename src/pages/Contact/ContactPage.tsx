@@ -10,16 +10,16 @@ const FAQS = [
     a: 'We offer a complimentary digital sizing guide and can dispatch a physical luxury ring sizer to your residence worldwide. You may also schedule a private consultation at our Milan or New York salons.'
   },
   {
-    q: 'Are Velessa creations forged in solid 18k gold?',
-    a: 'Yes, without exception. We never use thin electroplate over base brass. Every piece is cast in solid 18k gold (750 hallmark) or 950 Platinum, ensuring it will never tarnish, peel, or irritate sensitive skin.'
+    q: 'What is 1 Gram Gold Forming and how does it differ from regular imitation?',
+    a: '1 Gram Gold Forming uses authentic 24K gold bonded over a solid, skin-safe brass and copper foundation using advanced micro-plating. Unlike cheap gold polish that fades in days, 1 Gram Gold Forming replicates the exact 22k yellow luster, substantial weight, and comes with an anti-tarnish protective lacquer.'
   },
   {
-    q: 'What is your insured shipping policy?',
-    a: 'All acquisitions over ₹15,000 include complimentary insured white-glove courier shipping with real-time GPS tracking and adult signature required upon physical handoff.'
+    q: 'What is your shipping policy and is Cash on Delivery (COD) available?',
+    a: 'All orders over ₹999 include complimentary insured express delivery across India with real-time tracking. Cash on Delivery (COD) is also available on all eligible postal codes.'
   },
   {
-    q: 'Can I commission a bespoke engagement or heirloom piece?',
-    a: 'Our master goldsmiths accept a limited number of bespoke private commissions each quarter. Please select "Bespoke Atelier Commission" in the subject dropdown to initiate a design consultation.'
+    q: 'Will this jewellery cause skin allergies or rashes?',
+    a: 'No. All Velessa 1 Gram Gold Forming and imitation pieces are crafted with 100% lead, nickel, and cadmium-free hypoallergenic base alloys, making them comfortable and safe for sensitive skin.'
   }
 ];
 

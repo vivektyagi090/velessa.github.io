@@ -42,7 +42,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({ isOpen, onClos
                 VELESSA
               </span>
               <span className="text-[9px] uppercase tracking-[0.3em] text-champagne font-sans font-medium">
-                Haute Joaillerie
+                1 Gram Gold & Imitation
               </span>
             </div>
             <button

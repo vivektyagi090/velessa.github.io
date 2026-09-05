@@ -1,27 +1,27 @@
 import { CartItem, CartSummary, PromoDiscount } from '../types/cart';
 
-const FREE_SHIPPING_THRESHOLD = 15000;
-const STANDARD_SHIPPING_RATE = 499;
-const ESTIMATED_TAX_RATE = 0.03; // 3% standard GST on fine jewellery in India
+const FREE_SHIPPING_THRESHOLD = 999;
+const STANDARD_SHIPPING_RATE = 79;
+const ESTIMATED_TAX_RATE = 0.03; // 3% standard GST in India
 
 const PROMO_CODES: Record<string, PromoDiscount> = {
   'VELESSA10': {
     code: 'VELESSA10',
     percentage: 10,
-    description: '10% Privé Circle Introductory Welcome Offer',
+    description: '10% Welcome Discount on First Order',
     minSpend: 0
   },
-  'VIP15': {
-    code: 'VIP15',
+  'GOLD15': {
+    code: 'GOLD15',
     percentage: 15,
-    description: '15% Haute Joaillerie Collector Privilege',
-    minSpend: 40000
+    description: '15% 1-Gram Gold Festive Privilege',
+    minSpend: 1499
   },
-  'DIAMOND20': {
-    code: 'DIAMOND20',
+  'BRIDAL20': {
+    code: 'BRIDAL20',
     percentage: 20,
-    description: '20% Fine Jewellery Salon Special',
-    minSpend: 100000
+    description: '20% Grand Bridal & Jewellery Set Special',
+    minSpend: 2999
   }
 };
 

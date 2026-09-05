@@ -21,14 +21,14 @@ export const AboutPage: React.FC = () => {
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center text-ivory space-y-4">
           <span className="text-[11px] uppercase tracking-[0.35em] text-champagne font-sans font-medium flex items-center justify-center gap-2">
             <Sparkles className="w-3.5 h-3.5" />
-            The Maison Story
+            The Velessa Story
           </span>
           <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light tracking-tight">
-            Sculpted for Eternity, <br />
-            <span className="italic gold-gradient-text font-normal">Born in Light.</span>
+            The Look of Real 22K Gold, <br />
+            <span className="italic gold-gradient-text font-normal">Crafted for Modern Life.</span>
           </h1>
           <p className="text-sm sm:text-base text-ivory/80 font-sans font-light max-w-xl mx-auto leading-relaxed">
-            Where old-world European craftsmanship converses with modern architectural purity.
+            Where ancestral Indian jewellery artistry meets cutting-edge 1-Gram Gold Forming micro-technology.
           </p>
         </div>
       </section>
@@ -41,17 +41,17 @@ export const AboutPage: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 space-y-6">
               <span className="text-[11px] uppercase tracking-[0.3em] text-champagne font-sans font-semibold">
-                Genesis & Heritage
+                Genesis & Mission
               </span>
               <h2 className="font-serif text-3xl sm:text-5xl font-light text-charcoal leading-tight">
                 Our Story
               </h2>
               <div className="w-12 h-[1px] bg-champagne" />
               <p className="text-sm text-charcoal-muted font-sans font-light leading-relaxed">
-                Velessa was established with an uncompromising mission: to liberate fine jewellery from seasonal fashion whims and return to the realm of pure sculpture. Conceived in Milan and crafted by generational masters, our jewels represent intimate monuments of devotion, milestones, and personal power.
+                Velessa was established with a singular vision: to liberate Indian jewellery from the bank locker. Why spend lakhs on heavy gold sets that only see daylight once a year, or worry about theft during wedding travels?
               </p>
               <p className="text-sm text-charcoal-muted font-sans font-light leading-relaxed">
-                We believe fine jewellery shouldn't be sequestered in safe vaults waiting for rare celebrations. It belongs against the warmth of your skin, capturing daylight during quiet mornings and commanding moonlit evenings.
+                We engineered our signature 1-Gram Gold Forming technique to replicate the exact color, gleam, intricate filigree, and reassuring weight of 22K pure hallmarked gold. Combined with high-grade American Diamonds (AD), Polki Kundan, and Meenakari craftsmanship, Velessa delivers luxury you can wear anywhere with complete confidence.
               </p>
             </div>
 

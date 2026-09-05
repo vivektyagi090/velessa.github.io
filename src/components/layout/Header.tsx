@@ -92,8 +92,8 @@ export const Header: React.FC = () => {
                 <span className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-[0.28em] font-light text-charcoal group-hover:text-champagne transition-colors duration-300">
                   VELESSA
                 </span>
-                <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.35em] text-champagne font-sans font-medium -mt-1">
-                  Haute Joaillerie
+                <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-champagne font-sans font-medium -mt-1">
+                  1 Gram Gold & Imitation
                 </span>
               </Link>
             </div>

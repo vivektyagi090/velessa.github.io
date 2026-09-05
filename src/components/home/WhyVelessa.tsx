@@ -5,23 +5,23 @@ import { SectionHeading } from '../common/SectionHeading';
 const PILLARS = [
   {
     icon: Gem,
-    title: 'Premium Craftsmanship',
-    description: 'Every creation undergoes over 120 hours of hand-carving, prong tension testing, and optical alignment by master European goldsmiths.'
+    title: '1 Gram Real Gold Look',
+    description: 'Advanced 1-Gram 24K Gold Forming micro-plating that matches the exact luster, color, and reassuring weight of 22K hallmarked gold.'
   },
   {
     icon: Compass,
-    title: 'Elegant Designs',
-    description: 'Distinctive architectural lines that balance bold presence with feminine grace. Designed to be effortlessly worn daily and celebrated for eternity.'
+    title: 'Anti-Tarnish Coating',
+    description: 'Treated with cutting-edge protective nano-lacquer that shields against sweat, moisture, and daily wear for enduring radiance.'
   },
   {
     icon: Award,
-    title: 'Quality Materials',
-    description: 'Forged strictly in 18k solid gold, 950 platinum, and ethical conflict-free diamonds accompanied by accredited gemological certificates.'
+    title: 'Skin-Safe & Hypoallergenic',
+    description: 'Forged strictly with 100% lead, nickel, and cadmium-free brass and copper cores, making them completely safe for sensitive skin.'
   },
   {
     icon: Box,
-    title: 'Secure Packaging',
-    description: 'Enclosed within our handcrafted solid wood jewelry vault, lined with Italian silk velvet and secured with wax-sealed certificates of authenticity.'
+    title: 'Affordable Luxury',
+    description: 'Wear royal bridal Kundan, temple harams, and diamond solitaires with confidence and peace of mind at a fraction of solid gold costs.'
   }
 ];
 

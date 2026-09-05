@@ -13,11 +13,13 @@ interface ProductFiltersProps {
 }
 
 const MATERIALS: MetalType[] = [
-  '18k Yellow Gold',
-  '18k Rose Gold',
-  '18k White Gold',
-  'Platinum 950',
-  'Sterling Silver 925'
+  '1 Gram Gold Forming',
+  '24k Micro Gold Plated',
+  'Antique Matte Gold',
+  'American Diamond (AD)',
+  'Kundan & Meenakari',
+  'Rose Gold Polish',
+  'Rhodium & Silver Polish'
 ];
 
 export const ProductFilters: React.FC<ProductFiltersProps> = ({
@@ -103,7 +105,7 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
       <div className="space-y-3 pt-4 border-t border-beige">
         <div className="flex items-center justify-between text-xs">
           <h4 className="uppercase tracking-[0.2em] text-champagne font-semibold">
-            Max Investment
+            Max Price
           </h4>
           <span className="font-semibold text-charcoal">
             ₹{filters.priceRange[1].toLocaleString('en-IN')}
@@ -111,24 +113,24 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
         </div>
         <input
           type="range"
-          min="15000"
-          max="500000"
-          step="5000"
+          min="400"
+          max="5000"
+          step="100"
           value={filters.priceRange[1]}
           onChange={(e) => handlePriceChange(Number(e.target.value))}
           className="w-full accent-champagne h-1.5 bg-beige-dark rounded-lg cursor-pointer"
         />
         <div className="flex justify-between text-[10px] text-charcoal-muted">
-          <span>₹15,000</span>
-          <span>₹2,50,000</span>
-          <span>₹5,00,000+</span>
+          <span>₹400</span>
+          <span>₹2,500</span>
+          <span>₹5,000+</span>
         </div>
       </div>
 
-      {/* Material Filter */}
+      {/* Material / Polish Filter */}
       <div className="space-y-3 pt-4 border-t border-beige">
         <h4 className="text-xs uppercase tracking-[0.2em] text-champagne font-semibold">
-          Precious Metal
+          Plating & Polish
         </h4>
         <div className="space-y-2 text-xs">
           <label className="flex items-center gap-2.5 cursor-pointer text-charcoal hover:text-champagne transition-colors">

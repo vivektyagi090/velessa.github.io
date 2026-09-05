@@ -430,7 +430,7 @@ export const ProductDetailsPage: React.FC = () => {
                       Every Velessa piece is dispatched via armored insured express courier in discreet luxury packaging.
                     </p>
                     <p>
-                      <strong>Domestic:</strong> 2-3 business days. Complimentary on orders over ₹15,000.
+                      <strong>Domestic:</strong> 2-4 business days. Complimentary on orders over ₹999. Cash on Delivery (COD) available.
                     </p>
                     <p>
                       <strong>International:</strong> 3-5 business days with all customs duties pre-cleared.

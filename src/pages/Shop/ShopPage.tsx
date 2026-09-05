@@ -14,7 +14,7 @@ const INITIAL_FILTERS: FilterState = {
   category: 'All',
   collection: 'All',
   material: 'All',
-  priceRange: [15000, 500000],
+  priceRange: [400, 5000],
   inStockOnly: false,
   sortBy: 'featured',
   searchQuery: '',
@@ -71,8 +71,8 @@ export const ShopPage: React.FC = () => {
   const activeFilterTags = [
     filters.category !== 'All' && { key: 'category', label: `Category: ${filters.category}` },
     filters.collection !== 'All' && { key: 'collection', label: `Collection: ${filters.collection}` },
-    filters.material !== 'All' && { key: 'material', label: `Metal: ${filters.material}` },
-    filters.priceRange[1] < 500000 && { key: 'price', label: `Under ₹${filters.priceRange[1].toLocaleString('en-IN')}` },
+    filters.material !== 'All' && { key: 'material', label: `Plating: ${filters.material}` },
+    filters.priceRange[1] < 5000 && { key: 'price', label: `Under ₹${filters.priceRange[1].toLocaleString('en-IN')}` },
     filters.inStockOnly && { key: 'stock', label: 'In Stock Only' },
     filters.searchQuery && { key: 'search', label: `Search: "${filters.searchQuery}"` },
   ].filter(Boolean) as { key: string; label: string }[];
@@ -81,7 +81,7 @@ export const ShopPage: React.FC = () => {
     if (key === 'category') setFilters({ ...filters, category: 'All' });
     if (key === 'collection') setFilters({ ...filters, collection: 'All' });
     if (key === 'material') setFilters({ ...filters, material: 'All' });
-    if (key === 'price') setFilters({ ...filters, priceRange: [15000, 500000] });
+    if (key === 'price') setFilters({ ...filters, priceRange: [400, 5000] });
     if (key === 'stock') setFilters({ ...filters, inStockOnly: false });
     if (key === 'search') setFilters({ ...filters, searchQuery: '' });
   };
@@ -92,7 +92,7 @@ export const ShopPage: React.FC = () => {
       <div className="bg-beige/30 border-b border-beige py-10 sm:py-14">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-[11px] uppercase tracking-[0.3em] text-champagne font-sans font-medium mb-2 block">
-            Haute Joaillerie Catalogue
+            1 Gram Gold & Imitation Jewellery Catalogue
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-light text-charcoal tracking-tight">
             {filters.category !== 'All'
@@ -102,7 +102,7 @@ export const ShopPage: React.FC = () => {
               : 'All Jewellery Creations'}
           </h1>
           <p className="text-xs sm:text-sm text-charcoal-muted font-sans max-w-xl mx-auto mt-3">
-            Handcrafted solid gold and ethical diamonds. Imbued with understated elegance and enduring beauty.
+            Handcrafted 1 Gram Gold Forming, Kundan, and American Diamond jewellery with 100% real gold shine and anti-tarnish guarantee.
           </p>
         </div>
       </div>
