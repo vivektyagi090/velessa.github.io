@@ -109,8 +109,8 @@ export const Header: React.FC = () => {
                 </Link>
               </nav>
 
-              {/* Action Icons */}
-              <div className="flex items-center space-x-4 sm:space-x-5">
+              {/* Action Icons - Hidden on mobile view since they are on the bottom navigation bar */}
+              <div className="hidden lg:flex items-center space-x-4 sm:space-x-5">
                 {/* Search Button */}
                 <button
                   onClick={() => setIsSearchOpen(true)}
@@ -159,6 +159,9 @@ export const Header: React.FC = () => {
                   )}
                 </button>
               </div>
+
+              {/* Mobile spacer balancing the hamburger button so logo remains perfectly centered */}
+              <div className="w-8 lg:hidden" aria-hidden="true" />
             </div>
           </div>
         </div>

@@ -23,13 +23,13 @@ export const HeroSection: React.FC = () => {
         {/* Kicker badge */}
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal/60 backdrop-blur-md border border-champagne/40 text-[11px] font-sans uppercase tracking-[0.3em] text-champagne mb-6">
           <Sparkles className="w-3.5 h-3.5" />
-          <span>1 Gram Gold Forming & Premium Imitation</span>
+          <span>Haute Joaillerie & Fine Heirlooms</span>
         </div>
 
         {/* Elegant Headline */}
         <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-light tracking-tight leading-[1.08] text-ivory mb-6 max-w-4xl mx-auto">
-          Real 22K Gold Look, <br className="hidden sm:inline" />
-          <span className="italic font-normal gold-gradient-text">1 Gram Gold Forming.</span>
+          Timeless Elegance, <br className="hidden sm:inline" />
+          <span className="italic font-normal gold-gradient-text">Made to Be Yours.</span>
         </h1>
 
         {/* Short Brand Description */}
