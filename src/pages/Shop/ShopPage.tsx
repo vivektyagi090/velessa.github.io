@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { SlidersHorizontal, X, ArrowUpDown } from 'lucide-react';
+import { SlidersHorizontal, X, ArrowUpDown, Sparkles } from 'lucide-react';
 import { Product, ProductCategory, ProductCollection, MetalType } from '../../types/product';
 import { FilterState } from '../../types/filter';
 import { productService } from '../../services/productService';
@@ -89,11 +89,24 @@ export const ShopPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-ivory pb-24">
       {/* Header Banner */}
-      <div className="bg-beige/30 border-b border-beige py-10 sm:py-14">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-champagne font-sans font-medium mb-2 block">
-            1 Gram Gold & Imitation Jewellery Catalogue
+      <div className="relative bg-beige/30 border-b border-beige py-10 sm:py-14 overflow-hidden">
+        {/* Background Watermark Label ("back side" watermark) */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+          <span className="font-serif text-6xl sm:text-8xl md:text-9xl tracking-[0.25em] uppercase text-charcoal/[0.035] leading-none whitespace-nowrap">
+            VELESSA
           </span>
+        </div>
+
+        {/* Ambient Subtle Radial Glow in back side */}
+        <div className="absolute inset-0 bg-radial-gradient from-champagne/15 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+          {/* Kicker Pill Label / Badge */}
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal text-champagne border border-champagne/40 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] mb-3.5 shadow-sm backdrop-blur-sm">
+            <Sparkles className="w-3.5 h-3.5 text-champagne shrink-0" />
+            <span>1 Gram Gold &amp; Imitation Jewellery Catalogue</span>
+          </div>
+
           <h1 className="font-serif text-3xl sm:text-5xl font-light text-charcoal tracking-tight">
             {filters.category !== 'All'
               ? filters.category

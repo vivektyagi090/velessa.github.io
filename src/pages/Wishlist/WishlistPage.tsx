@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Heart, Trash2, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Heart, Trash2, ShoppingBag, ArrowRight, Sparkles } from 'lucide-react';
 import { useWishlist } from '../../context/WishlistContext';
 import { useCart } from '../../context/CartContext';
 import { formatPrice } from '../../utils/formatters';
@@ -18,11 +18,22 @@ export const WishlistPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-ivory pb-24">
       {/* Top Banner */}
-      <div className="bg-beige/30 border-b border-beige py-12 text-center">
-        <div className="max-w-4xl mx-auto px-4">
-          <span className="text-[11px] uppercase tracking-[0.3em] text-champagne font-sans font-medium mb-2 block">
-            Private Curation
+      <div className="relative bg-beige/30 border-b border-beige py-12 text-center overflow-hidden">
+        {/* Background Watermark Label ("back side" watermark) */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
+          <span className="font-serif text-6xl sm:text-8xl md:text-9xl tracking-[0.25em] uppercase text-charcoal/[0.035] leading-none whitespace-nowrap">
+            VELESSA
           </span>
+        </div>
+
+        {/* Ambient Subtle Radial Glow in back side */}
+        <div className="absolute inset-0 bg-radial-gradient from-champagne/15 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
+
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal text-champagne border border-champagne/40 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.25em] mb-3.5 shadow-sm backdrop-blur-sm">
+            <Sparkles className="w-3.5 h-3.5 text-champagne shrink-0" />
+            <span>Private Curation</span>
+          </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-light text-charcoal tracking-tight">
             Saved Creations
           </h1>
