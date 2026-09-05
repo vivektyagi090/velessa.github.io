@@ -117,7 +117,7 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({ isOpen, onClos
           </div>
 
           {/* Categories Grid */}
-          <div className="px-6 pt-4 pb-6 border-t border-beige">
+          <div className="px-5 sm:px-6 pt-4 pb-6 border-t border-beige">
             <h4 className="text-[11px] uppercase tracking-[0.25em] text-champagne font-sans font-semibold mb-3">
               Browse by Category
             </h4>
@@ -126,9 +126,12 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({ isOpen, onClos
                 <button
                   key={cat.id}
                   onClick={() => handleNav(`/shop?category=${cat.name}`)}
-                  className="text-left text-xs uppercase tracking-wider font-sans text-charcoal hover:text-champagne py-2 px-3 bg-white/50 border border-beige/60 rounded-sm hover:border-champagne transition-all flex items-center justify-between"
+                  className="min-w-0 w-full text-center py-2.5 px-1.5 bg-white/70 border border-beige/70 rounded-xs hover:border-champagne hover:bg-white text-charcoal hover:text-champagne transition-all flex items-center justify-center overflow-hidden active:scale-95 shadow-2xs"
+                  title={cat.name}
                 >
-                  <span>{cat.name}</span>
+                  <span className="text-[10.5px] sm:text-[11px] font-sans font-medium uppercase tracking-normal truncate block w-full">
+                    {cat.name}
+                  </span>
                 </button>
               ))}
             </div>
