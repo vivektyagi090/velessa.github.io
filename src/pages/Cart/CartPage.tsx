@@ -49,7 +49,7 @@ export const CartPage: React.FC = () => {
             Your Shopping Bag
           </h1>
           <p className="text-xs sm:text-sm text-charcoal-muted font-sans mt-2">
-            Complimentary insured white-glove courier delivery on all orders over $250.
+            Complimentary insured white-glove courier delivery on all orders over ₹15,000.
           </p>
         </div>
       </div>

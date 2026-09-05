@@ -14,7 +14,7 @@ const INITIAL_FILTERS: FilterState = {
   category: 'All',
   collection: 'All',
   material: 'All',
-  priceRange: [300, 5000],
+  priceRange: [15000, 500000],
   inStockOnly: false,
   sortBy: 'featured',
   searchQuery: '',
@@ -72,7 +72,7 @@ export const ShopPage: React.FC = () => {
     filters.category !== 'All' && { key: 'category', label: `Category: ${filters.category}` },
     filters.collection !== 'All' && { key: 'collection', label: `Collection: ${filters.collection}` },
     filters.material !== 'All' && { key: 'material', label: `Metal: ${filters.material}` },
-    filters.priceRange[1] < 5000 && { key: 'price', label: `Under $${filters.priceRange[1].toLocaleString()}` },
+    filters.priceRange[1] < 500000 && { key: 'price', label: `Under ₹${filters.priceRange[1].toLocaleString('en-IN')}` },
     filters.inStockOnly && { key: 'stock', label: 'In Stock Only' },
     filters.searchQuery && { key: 'search', label: `Search: "${filters.searchQuery}"` },
   ].filter(Boolean) as { key: string; label: string }[];
@@ -81,7 +81,7 @@ export const ShopPage: React.FC = () => {
     if (key === 'category') setFilters({ ...filters, category: 'All' });
     if (key === 'collection') setFilters({ ...filters, collection: 'All' });
     if (key === 'material') setFilters({ ...filters, material: 'All' });
-    if (key === 'price') setFilters({ ...filters, priceRange: [300, 5000] });
+    if (key === 'price') setFilters({ ...filters, priceRange: [15000, 500000] });
     if (key === 'stock') setFilters({ ...filters, inStockOnly: false });
     if (key === 'search') setFilters({ ...filters, searchQuery: '' });
   };

@@ -12,7 +12,7 @@ export const AnnouncementBar: React.FC = () => {
         <div className="w-6 hidden sm:block" /> {/* Spacer */}
         <div className="flex items-center justify-center gap-2 mx-auto tracking-[0.18em] uppercase font-light text-center">
           <Sparkles className="w-3.5 h-3.5 text-champagne hidden sm:inline" />
-          <span>Complimentary Insured Delivery on Orders Over $250</span>
+          <span>Complimentary Insured Delivery on Orders Over ₹15,000</span>
           <span className="text-champagne hidden md:inline">|</span>
           <span className="hidden md:inline text-champagne">
             Privé Code <strong className="font-semibold text-ivory underline decoration-champagne">VELESSA10</strong> for 10% Off

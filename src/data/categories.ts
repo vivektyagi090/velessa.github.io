@@ -8,7 +8,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Sculptural solitaires, diamond eternity bands, and bespoke cocktail rings.',
     image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80',
     itemCount: 8,
-    startingPrice: 380,
+    startingPrice: 32000,
   },
   {
     id: 'necklaces',
@@ -17,7 +17,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Cascading diamond collarettes, fluid yellow gold chokers, and subtle everyday chains.',
     image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80',
     itemCount: 6,
-    startingPrice: 450,
+    startingPrice: 38000,
   },
   {
     id: 'earrings',
@@ -26,7 +26,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Lustrous south sea pearl drops, diamond pavé hugs, and bold sculptural hoops.',
     image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80',
     itemCount: 7,
-    startingPrice: 290,
+    startingPrice: 24000,
   },
   {
     id: 'bracelets',
@@ -35,7 +35,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Tennis bracelets of uninterrupted fire, delicate chain links, and diamond cuffs.',
     image: 'https://images.unsplash.com/photo-1611591475825-9276c1f76d45?auto=format&fit=crop&w=900&q=80',
     itemCount: 5,
-    startingPrice: 520,
+    startingPrice: 44000,
   },
   {
     id: 'bangles',
@@ -44,7 +44,7 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Hand-carved 18k gold torque bangles, hinged diamond bands, and layered wrist statements.',
     image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80',
     itemCount: 4,
-    startingPrice: 680,
+    startingPrice: 55000,
   },
   {
     id: 'pendants',
@@ -53,6 +53,6 @@ export const CATEGORIES: CategoryInfo[] = [
     description: 'Astronomical talismans, bezel-set solitaire emeralds, and architectural medallions.',
     image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80',
     itemCount: 5,
-    startingPrice: 340,
+    startingPrice: 28000,
   },
 ];

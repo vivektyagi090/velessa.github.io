@@ -15,7 +15,7 @@ const FAQS = [
   },
   {
     q: 'What is your insured shipping policy?',
-    a: 'All acquisitions over $250 include complimentary insured white-glove courier shipping with real-time GPS tracking and adult signature required upon physical handoff.'
+    a: 'All acquisitions over ₹15,000 include complimentary insured white-glove courier shipping with real-time GPS tracking and adult signature required upon physical handoff.'
   },
   {
     q: 'Can I commission a bespoke engagement or heirloom piece?',

@@ -21,7 +21,7 @@ const DELIVERY_METHODS: DeliveryMethod[] = [
     name: 'White-Glove VIP Courier',
     description: 'Next-day personal hand-delivery with sealed atelier presentation box.',
     estimatedDays: 'Next Business Day',
-    price: 45,
+    price: 999,
   },
 ];
 

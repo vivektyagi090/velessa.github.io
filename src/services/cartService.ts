@@ -1,8 +1,8 @@
 import { CartItem, CartSummary, PromoDiscount } from '../types/cart';
 
-const FREE_SHIPPING_THRESHOLD = 250;
-const STANDARD_SHIPPING_RATE = 25;
-const ESTIMATED_TAX_RATE = 0.05; // 5%
+const FREE_SHIPPING_THRESHOLD = 15000;
+const STANDARD_SHIPPING_RATE = 499;
+const ESTIMATED_TAX_RATE = 0.03; // 3% standard GST on fine jewellery in India
 
 const PROMO_CODES: Record<string, PromoDiscount> = {
   'VELESSA10': {
@@ -15,13 +15,13 @@ const PROMO_CODES: Record<string, PromoDiscount> = {
     code: 'VIP15',
     percentage: 15,
     description: '15% Haute Joaillerie Collector Privilege',
-    minSpend: 500
+    minSpend: 40000
   },
   'DIAMOND20': {
     code: 'DIAMOND20',
     percentage: 20,
     description: '20% Fine Jewellery Salon Special',
-    minSpend: 1500
+    minSpend: 100000
   }
 };
 
@@ -65,7 +65,7 @@ export const cartService = {
     }
 
     if (promo.minSpend && currentSubtotal < promo.minSpend) {
-      return { promo: null, error: `Requires a minimum investment of $${promo.minSpend}` };
+      return { promo: null, error: `Requires a minimum investment of ₹${promo.minSpend.toLocaleString('en-IN')}` };
     }
 
     return { promo, error: undefined };

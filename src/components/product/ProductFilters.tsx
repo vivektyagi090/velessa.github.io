@@ -106,22 +106,22 @@ export const ProductFilters: React.FC<ProductFiltersProps> = ({
             Max Investment
           </h4>
           <span className="font-semibold text-charcoal">
-            ${filters.priceRange[1].toLocaleString()}
+            ₹{filters.priceRange[1].toLocaleString('en-IN')}
           </span>
         </div>
         <input
           type="range"
-          min="300"
-          max="5000"
-          step="100"
+          min="15000"
+          max="500000"
+          step="5000"
           value={filters.priceRange[1]}
           onChange={(e) => handlePriceChange(Number(e.target.value))}
           className="w-full accent-champagne h-1.5 bg-beige-dark rounded-lg cursor-pointer"
         />
         <div className="flex justify-between text-[10px] text-charcoal-muted">
-          <span>$300</span>
-          <span>$2,500</span>
-          <span>$5,000+</span>
+          <span>₹15,000</span>
+          <span>₹2,50,000</span>
+          <span>₹5,00,000+</span>
         </div>
       </div>
 

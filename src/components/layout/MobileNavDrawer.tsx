@@ -158,11 +158,11 @@ export const MobileNavDrawer: React.FC<MobileNavDrawerProps> = ({ isOpen, onClos
           <div className="pt-2 flex items-center justify-between text-xs text-charcoal-muted font-sans">
             <span className="flex items-center gap-1.5">
               <Phone className="w-3.5 h-3.5 text-champagne" />
-              <span>+1 (800) 835-3772</span>
+              <span>+91 (022) 4890 2800</span>
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1 text-champagne font-medium">
               <Sparkles className="w-3 h-3 text-champagne" />
-              <span>Private Appointments</span>
+              <span>₹ INR Currency</span>
             </span>
           </div>
         </div>

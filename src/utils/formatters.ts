@@ -1,5 +1,5 @@
-export const formatPrice = (amount: number, currency: string = '$'): string => {
-  return `${currency}${amount.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`;
+export const formatPrice = (amount: number, currency: string = '₹'): string => {
+  return `${currency}${amount.toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 0 })}`;
 };
 
 export const calculateDiscount = (originalPrice?: number, currentPrice?: number): number => {

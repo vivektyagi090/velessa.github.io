@@ -32,6 +32,12 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const handleOpenSearch = () => setIsSearchOpen(true);
+    window.addEventListener('open-velessa-search', handleOpenSearch);
+    return () => window.removeEventListener('open-velessa-search', handleOpenSearch);
+  }, []);
+
   // Header dynamic classes based on scroll and current page
   const headerBackgroundClass = isHomePage
     ? isScrolled
@@ -52,7 +58,7 @@ export const Header: React.FC = () => {
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${headerBackgroundClass}`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20 sm:h-24">
+          <div className="flex items-center justify-between h-16 sm:h-20 lg:h-24">
             {/* Mobile Menu Button */}
             <div className="flex items-center lg:hidden">
               <button

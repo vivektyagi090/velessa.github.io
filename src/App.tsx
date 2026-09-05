@@ -8,6 +8,7 @@ import { Header } from './components/layout/Header';
 import { AnnouncementBar } from './components/layout/AnnouncementBar';
 import { Footer } from './components/layout/Footer';
 import { CartDrawer } from './components/cart/CartDrawer';
+import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { AppRoutes } from './routes/AppRoutes';
 
 const AppContent: React.FC = () => {
@@ -19,11 +20,12 @@ const AppContent: React.FC = () => {
       {!isCheckout && <AnnouncementBar />}
       {!isCheckout && <Header />}
       
-      <main className="flex-1">
+      <main className="flex-1 pb-16 lg:pb-0">
         <AppRoutes />
       </main>
 
       {!isCheckout && <Footer />}
+      {!isCheckout && <MobileBottomNav />}
       <CartDrawer />
     </div>
   );

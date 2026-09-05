@@ -133,7 +133,7 @@ export const ProductDetailsPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-ivory pb-24">
+    <div className="min-h-screen bg-ivory pb-36 lg:pb-24">
       {/* Breadcrumb container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <Breadcrumb
@@ -430,7 +430,7 @@ export const ProductDetailsPage: React.FC = () => {
                       Every Velessa piece is dispatched via armored insured express courier in discreet luxury packaging.
                     </p>
                     <p>
-                      <strong>Domestic:</strong> 2-3 business days. Complimentary on orders over $250.
+                      <strong>Domestic:</strong> 2-3 business days. Complimentary on orders over ₹15,000.
                     </p>
                     <p>
                       <strong>International:</strong> 3-5 business days with all customs duties pre-cleared.
@@ -608,6 +608,48 @@ export const ProductDetailsPage: React.FC = () => {
         isOpen={!!selectedQuickViewProduct}
         onClose={() => setSelectedQuickViewProduct(null)}
       />
+
+      {/* Mobile App Sticky Buy/Action Bar */}
+      <aside
+        aria-label="Quick acquisition bar"
+        className="fixed bottom-16 inset-x-0 z-30 lg:hidden bg-ivory/95 backdrop-blur-xl border-t border-champagne/30 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-2.5 transition-all"
+      >
+        <div className="flex items-center justify-between gap-3 max-w-lg mx-auto">
+          <div className="flex items-center gap-2.5 min-w-0">
+            <img
+              src={product.images[0]}
+              alt={product.name}
+              className="w-10 h-10 object-cover rounded-xs border border-beige shrink-0"
+            />
+            <div className="min-w-0">
+              <p className="text-xs font-serif font-light text-charcoal truncate">
+                {product.name}
+              </p>
+              <p className="text-xs font-semibold text-charcoal">
+                {formatPrice(product.price)}
+              </p>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 shrink-0">
+            <button
+              onClick={() => toggleWishlist(product)}
+              className="p-2 border border-charcoal/20 bg-white rounded-xs text-charcoal hover:text-champagne transition-colors"
+              aria-label="Save to Wishlist"
+            >
+              <Heart className={`w-4 h-4 ${isSaved ? 'fill-champagne text-champagne' : ''}`} />
+            </button>
+            <Button
+              variant="primary"
+              size="sm"
+              onClick={handleAddToCart}
+              className="text-xs px-4 py-2 shadow-xs whitespace-nowrap active:scale-95"
+            >
+              Add to Bag
+            </Button>
+          </div>
+        </div>
+      </aside>
     </div>
   );
 };
