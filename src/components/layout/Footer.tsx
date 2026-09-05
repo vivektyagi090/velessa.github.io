@@ -19,7 +19,7 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="bg-charcoal text-ivory pt-16 pb-12 border-t border-champagne/30">
+    <footer className="bg-charcoal text-ivory pt-16 pb-32 lg:pb-12 border-t border-champagne/30">
       {/* Brand Trust Badges */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 border-b border-ivory/10">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center sm:text-left">
@@ -248,7 +248,7 @@ export const Footer: React.FC = () => {
 
       {/* Bottom Bar / Copyright */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-ivory/10 flex flex-col sm:flex-row items-center justify-between text-xs text-ivory/50 font-sans gap-4">
-        <p>© 2026 VELESSA HAUTE JOAILLERIE. All rights reserved.</p>
+        <p>© 2026 VELESSA. All rights reserved.</p>
         <div className="flex items-center space-x-6">
           <Link to="/contact" className="hover:text-champagne transition-colors">
             Privacy Policy
