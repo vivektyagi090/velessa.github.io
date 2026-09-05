@@ -1,5 +1,7 @@
 import { Product } from '../types/product';
 
+const getImg = (name: string) => `${import.meta.env.BASE_URL}images/${name}`;
+
 export const PRODUCTS: Product[] = [
   {
     id: 'vel-001',
@@ -789,18 +791,19 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: 'vel-016',
-    name: '1 Gram Gold Forming Daily Wear Stud Earrings',
-    slug: '1-gram-gold-forming-daily-wear-studs',
-    price: 449,
-    originalPrice: 799,
+    name: '1 Gram Gold Forming Twin Swan Solitaire CZ Stud Earrings',
+    slug: '1-gram-gold-forming-twin-swan-cz-studs',
+    price: 549,
+    originalPrice: 999,
     category: 'Earrings',
-    collection: 'Everyday Elegance',
+    collection: 'Signature Collection',
     material: '1 Gram Gold Forming',
-    description: 'Minimalist floral button stud earrings forged in 1 Gram Gold Forming with a solitary sparkling CZ center. Designed for sensitive ears with hypoallergenic surgical post backs.',
-    shortDescription: 'Petite 1g gold forming floral studs with center CZ crystal.',
+    description: 'Breathtaking 1 Gram 24K Gold Forming twin swan motif stud earrings cradling brilliant pear-cut Swiss CZ solitaires and micro pavé feathered wings. Designed with hypoallergenic push-backs for comfortable all-day luxury wear.',
+    shortDescription: '1g gold forming twin swan studs with sparkling pear CZ diamonds.',
     images: [
-      'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1200&q=85',
-      'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1200&q=85',
+      getImg('earrings-twin-swan-velvet.png'),
+      getImg('earrings-twin-swan-cz-1.png'),
+      getImg('earrings-twin-swan-cz-2.png'),
     ],
     sizes: ['Standard Pierced (Bombat Screw Back)'],
     rating: 4.9,
@@ -838,4 +841,936 @@ export const PRODUCTS: Product[] = [
       }
     ]
   }
+,
+
+  {
+    id: 'vel-017',
+    name: 'Velessa Signature Angel Wing Swirl Diamond Stud Earrings',
+    slug: 'velessa-signature-angel-wing-swirl-diamond-studs',
+    price: 799,
+    originalPrice: 1499,
+    category: 'Earrings',
+    collection: 'Signature Collection',
+    material: '1 Gram Gold Forming',
+    description: 'Exclusive Velessa masterwork featuring an ethereal angel wing swirl design encrusted with micro-pavé Swiss American Diamonds and a central cluster blossom. Forged in authentic 1 Gram 22K Gold Forming with anti-tarnish golden luster.',
+    shortDescription: 'Velessa angel wing swirl earrings with sparkling pavé diamond accents.',
+    images: [
+      getImg('earrings-swirl-wing-pave-1.png'),
+      getImg('earrings-swirl-wing-pave-2.jpeg'),
+      getImg('earrings-swirl-wing-pave-3.jpeg'),
+    ],
+    sizes: ['Standard Pierced (Push Back)'],
+    rating: 5.0,
+    reviewCount: 38,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'AAA+ Swiss American Diamonds (CZ)',
+    karat: '1 Gram 22K Gold Forming',
+    dimensions: 'Height: 18mm | Width: 12mm',
+    details: [
+      'Genuine Velessa studio hallmark engraved finish',
+      'Dual-wing feather contour with brilliant light refraction',
+      'Skin-friendly pure brass core with 1 Gram 22K micro gold plating'
+    ],
+    careInstructions: [
+      'Wipe with soft cloth after use, store in Velessa velvet box'
+    ],
+    specifications: {
+      'Style': 'Angel Wing Swirl Cluster',
+      'Metal Finish': '1 Gram 22K Real Gold Forming',
+      'Stones': 'Swiss Cut American Diamonds',
+      'Backing': 'Hypoallergenic Push-Back'
+    },
+    reviews: [
+      {
+        id: 'rev-17-1',
+        author: 'Kavita Chawla',
+        rating: 5,
+        date: 'March 01, 2026',
+        title: 'Unbelievable sparkle and real gold shine!',
+        comment: 'These earrings look exactly like 18k real diamond jewellery! The wing detail is so fine and elegant.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-018',
+    name: 'Velessa Rose Gold Pavé Open Heart Stud Earrings',
+    slug: 'velessa-rose-gold-pave-open-heart-stud-earrings',
+    price: 649,
+    originalPrice: 1199,
+    category: 'Earrings',
+    collection: 'Everyday Elegance',
+    material: 'Rose Gold Polish',
+    description: 'A romantic sculptural open-heart silhouette sculpted in warm 18K rose gold polish and embellished with shimmering micropavé American Diamonds along the inner curve. Lightweight and hypoallergenic for daily glamour.',
+    shortDescription: 'Modern rose gold open-heart studs with brilliant pavé diamonds.',
+    images: [
+      getImg('earrings-pave-heart-1.png'),
+      getImg('earrings-studio-1543.jpeg'),
+      getImg('earrings-studio-1544.jpeg'),
+    ],
+    sizes: ['Standard Pierced'],
+    rating: 4.9,
+    reviewCount: 42,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'Micro-Pavé AAA Cubic Zirconia',
+    karat: '18K Rose Gold Plated',
+    dimensions: 'Height: 12mm | Width: 13mm',
+    details: [
+      'Signature Velessa sculpted heart silhouette',
+      'Comfort-fit scroll back clasp',
+      'Anti-tarnish rose gold lacquer seal'
+    ],
+    careInstructions: [
+      'Keep away from water and direct perfume sprays'
+    ],
+    specifications: {
+      'Collection': 'Everyday Elegance',
+      'Finish': '18K Rose Gold Mirror Gloss',
+      'Stone Type': 'Hand-Set Micro Pavé CZ'
+    },
+    reviews: [
+      {
+        id: 'rev-18-1',
+        author: 'Rhea Sen',
+        rating: 5,
+        date: 'February 27, 2026',
+        title: 'Delicate and stunning',
+        comment: 'Gave this to my sister for her birthday, she loved the modern heart design and rose gold warmth.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-019',
+    name: 'Velessa Art-Deco Fan Multi-Gemstone & Diamond Stud Earrings',
+    slug: 'velessa-art-deco-fan-multi-gemstone-diamond-studs',
+    price: 899,
+    originalPrice: 1699,
+    category: 'Earrings',
+    collection: 'Festive Collection',
+    material: 'Rose Gold Polish',
+    description: 'An architectural Art-Deco fan motif featuring teardrop-cut candy tourmalines and canary yellow sapphires arranged like petals, bordered by a crescent rim of sparkling pavé diamonds in warm rose gold.',
+    shortDescription: 'Art-Deco fan studs with colorful pastel gemstones and diamond halo.',
+    images: [
+      getImg('earrings-velessa-artdeco-fan.jpeg'),
+    ],
+    sizes: ['Standard Pierced'],
+    rating: 5.0,
+    reviewCount: 31,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'Hydro Pink Tourmaline, Citrine & American Diamonds',
+    karat: '18K Rose Gold Micro Plating',
+    dimensions: 'Width: 15mm | Height: 14mm',
+    details: [
+      'Official Velessa Jewellery collection flagship piece',
+      'Faceted pastel gemstone flower core with pavé fan arch',
+      '100% hypoallergenic brass base'
+    ],
+    careInstructions: [
+      'Store in airtight pouch'
+    ],
+    specifications: {
+      'Theme': 'Art-Deco Floral Fan',
+      'Gems': 'Synthetic Tourmaline & Citrine + AD',
+      'Plating': 'Rose Gold Polish'
+    },
+    reviews: [
+      {
+        id: 'rev-19-1',
+        author: 'Deepika Nair',
+        rating: 5,
+        date: 'February 24, 2026',
+        title: 'Showstopper earrings!',
+        comment: 'The pastel gemstone colors paired with rose gold are so unique. Got dozens of compliments at dinner.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-020',
+    name: 'Velessa Baguette & Princess Cut Diamond Huggie Hoop Earrings',
+    slug: 'velessa-baguette-princess-cut-diamond-huggie-hoops',
+    price: 949,
+    originalPrice: 1799,
+    category: 'Earrings',
+    collection: 'Statement Jewellery',
+    material: 'Rhodium & Silver Polish',
+    description: 'Sleek contemporary geometric huggies featuring dual-row channel-set princess and baguette-cut Swiss American Diamonds. Finished in mirror rhodium platinum plating with a seamless hinged click closure.',
+    shortDescription: 'Modern geometric huggies with baguette and princess-cut diamonds.',
+    images: [
+      getImg('earrings-velessa-baguette-huggie-brand.jpeg'),
+      getImg('earrings-baguette-huggie-1.png'),
+      getImg('earrings-velessa-baguette-huggie-collage.jpeg'),
+    ],
+    sizes: ['14mm Huggie Click-Hoop'],
+    rating: 4.9,
+    reviewCount: 45,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'AAA+ Princess & Baguette Cut American Diamonds',
+    karat: 'Platinum / Rhodium Micro Finish',
+    dimensions: 'Hoop Diameter: 14mm | Width: 6mm',
+    details: [
+      'Modern geometric ladder setting with princess-cut stones',
+      'Hinged huggie click lock for effortless all-day security',
+      'High-refraction diamond cut'
+    ],
+    careInstructions: [
+      'Clean with microfiber cloth'
+    ],
+    specifications: {
+      'Closure': 'Hinged Snap Click',
+      'Plating': 'Bright Rhodium Platinum Polish',
+      'Cut': 'Baguette & Square Princess Cut'
+    },
+    reviews: [
+      {
+        id: 'rev-20-1',
+        author: 'Meera Iyer',
+        rating: 5,
+        date: 'March 02, 2026',
+        title: 'Very premium look and feel',
+        comment: 'The snap closure is very satisfying and secure. Diamonds look like real VVS solitaires.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-021',
+    name: 'Velessa 18K Gold Huggie Hoops with Pear-Cut Solitaire Drop',
+    slug: 'velessa-gold-huggie-hoops-pear-cut-solitaire-drop',
+    price: 849,
+    originalPrice: 1599,
+    category: 'Earrings',
+    collection: 'Signature Collection',
+    material: '18k Yellow Gold',
+    description: 'Exquisite two-in-one huggie hoops featuring a pavé-lined gold hoop with a suspended teardrop pear-cut solitaire diamond that catches light with every movement. Can be worn with or without the drop charm.',
+    shortDescription: '18K gold pavé huggies with dangling pear-cut diamond solitaire.',
+    images: [
+      getImg('earrings-velessa-pear-dangle-collage.jpeg'),
+      getImg('earrings-huggie-pear-dangle-1.png'),
+      getImg('earrings-huggie-pear-dangle-2.png'),
+    ],
+    sizes: ['12mm Hoop with 10mm Drop'],
+    rating: 5.0,
+    reviewCount: 52,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'Pear-Cut Flawless Solitaire AD & Micro-Pavé',
+    karat: '18K Micro Gold Plated',
+    dimensions: 'Total Drop: 22mm | Hoop Diameter: 12mm',
+    details: [
+      'Includes Velessa signature photoshoot branded certification',
+      'Dangling teardrop solitaire with full 360-degree light play',
+      'Precision hinged latch'
+    ],
+    careInstructions: [
+      'Keep away from moisture and lotions'
+    ],
+    specifications: {
+      'Style': 'Dangle Charm Huggie',
+      'Plating': '18K Yellow Gold Forming',
+      'Stone': 'Flawless Pear-Cut Zirconia'
+    },
+    reviews: [
+      {
+        id: 'rev-21-1',
+        author: 'Tanvi Saxena',
+        rating: 5,
+        date: 'February 26, 2026',
+        title: 'My everyday favourite!',
+        comment: 'So lightweight and sparkly. The pear drop moves gracefully and looks ultra luxurious.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-022',
+    name: 'Velessa White Gold Infinity Twist Diamond Huggie Earrings',
+    slug: 'velessa-white-gold-infinity-twist-diamond-huggie-earrings',
+    price: 899,
+    originalPrice: 1699,
+    category: 'Earrings',
+    collection: 'Signature Collection',
+    material: 'Rhodium & Silver Polish',
+    description: 'An elegant infinity criss-cross silhouette engraved with AU750 hallmark, set with graduated round brilliant American Diamonds. Forged in platinum rhodium finish for an authentic white-gold bridal appeal.',
+    shortDescription: 'White gold infinity twist huggies with graduated diamond stones.',
+    images: [
+      getImg('earrings-velessa-infinity-twist.jpeg'),
+    ],
+    sizes: ['13mm Click Huggie'],
+    rating: 4.8,
+    reviewCount: 22,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Graduated Round Brilliant AD',
+    karat: 'AU750 White Gold Plating',
+    dimensions: 'Diameter: 13mm | Width: 5mm',
+    details: [
+      'Infinity cross-over ribbon motif',
+      'Hallmarked AU750 micro impression',
+      'Comfort-fit curved hinge post'
+    ],
+    careInstructions: [
+      'Wipe dry after each use'
+    ],
+    specifications: {
+      'Plating': 'White Gold Rhodium Polish',
+      'Base Metal': 'Anti-Allergy Brass'
+    },
+    reviews: [
+      {
+        id: 'rev-22-1',
+        author: 'Nalini Joshi',
+        rating: 5,
+        date: 'February 15, 2026',
+        title: 'Looks like real diamond jewellery',
+        comment: 'The twist design is very classy and the rhodium polish has not faded.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-023',
+    name: 'Velessa Solitaire Crown Dangle Diamond Huggies',
+    slug: 'velessa-solitaire-crown-dangle-huggie-hoop-earrings',
+    price: 799,
+    originalPrice: 1499,
+    category: 'Earrings',
+    collection: 'Everyday Elegance',
+    material: 'Rhodium & Silver Polish',
+    description: 'A royal crown-prong set round solitaire American Diamond hanging from a sparkling diamond-paved huggie hoop in brilliant white gold finish.',
+    shortDescription: 'Crown-prong solitaire dangle huggie hoops in white gold.',
+    images: [
+      getImg('earrings-velessa-solitaire-crown.jpeg'),
+      getImg('earrings-solitaire-dangle-huggie-1.png'),
+    ],
+    sizes: ['12mm Hoop + 6mm Crown Drop'],
+    rating: 4.9,
+    reviewCount: 27,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Round Solitaire AD & Micro Pavé',
+    karat: 'Platinum Rhodium Finish',
+    dimensions: 'Drop Length: 18mm | Crown: 6mm',
+    details: [
+      'Multi-prong crown basket holding the solitaire',
+      'Hinged snap closure'
+    ],
+    careInstructions: [
+      'Store in dry velvet box'
+    ],
+    specifications: {
+      'Stone Cut': 'Round Brilliant Solitaire',
+      'Metal': 'Rhodium Plated Brass'
+    },
+    reviews: [
+      {
+        id: 'rev-23-1',
+        author: 'Shalini Gupta',
+        rating: 5,
+        date: 'February 20, 2026',
+        title: 'Sparkles brilliantly',
+        comment: 'The crown setting around the solitaire looks very royal. Great value!',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-024',
+    name: 'Velessa Wide Pavé Diamond Huggie Earrings (Signature V-Monogram)',
+    slug: 'velessa-wide-pave-diamond-huggie-earrings-v-monogram',
+    price: 999,
+    originalPrice: 1899,
+    category: 'Earrings',
+    collection: 'Signature Collection',
+    material: '18k Yellow Gold',
+    description: 'The definitive Velessa icon: broad 4-row dome huggies paved with high-density Swiss micro American Diamonds and engraved with the signature Velessa "V" monogram along the clasp hinge.',
+    shortDescription: 'Iconic wide 4-row pavé huggies with signature Velessa V-monogram.',
+    images: [
+      getImg('earrings-velessa-wide-pave-v-monogram.jpeg'),
+      getImg('earrings-velessa-wide-pave-blue-velvet.jpeg'),
+      getImg('earrings-velessa-wide-pave-cream-1.jpeg'),
+      getImg('earrings-velessa-wide-pave-cream-2.jpeg'),
+    ],
+    sizes: ['14mm Wide Huggie'],
+    rating: 5.0,
+    reviewCount: 64,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: '4-Row Micro Pavé Swiss AD',
+    karat: '18K Yellow Gold Forming with Engraved V Logo',
+    dimensions: 'Diameter: 14mm | Width: 7.5mm',
+    details: [
+      'Custom laser-engraved Velessa "V" emblem on the lower hinge',
+      'Over 80 precision micro-pavé diamonds per pair',
+      '18K yellow gold thick micron plating'
+    ],
+    careInstructions: [
+      'Clean gently with soft cloth, store separated'
+    ],
+    specifications: {
+      'Signature': 'Velessa V-Monogram Hinge',
+      'Stone Count': '80+ Micro Pavé Stones',
+      'Width': '7.5mm Bold Dome Profile'
+    },
+    reviews: [
+      {
+        id: 'rev-24-1',
+        author: 'Priyanka Kapoor',
+        rating: 5,
+        date: 'March 03, 2026',
+        title: 'Masterpiece huggies!',
+        comment: 'The V logo engraving and the 4-row pave diamonds give this an ultra-luxe designer appeal. 10/10.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-025',
+    name: 'Velessa Rose Gold Dome Micro Pavé Huggie Earrings',
+    slug: 'velessa-rose-gold-dome-micro-pave-huggie-earrings',
+    price: 749,
+    originalPrice: 1399,
+    category: 'Earrings',
+    collection: 'Minimal Collection',
+    material: 'Rose Gold Polish',
+    description: 'Chic contoured dome huggies encrusted with a carpet of micro-pavé diamonds in a rosy blush finish. Perfectly contoured to hug the earlobe comfortably.',
+    shortDescription: 'Contoured dome huggies with micro-pavé diamonds in rose gold.',
+    images: [
+      getImg('earrings-pave-huggie-teal.png'),
+    ],
+    sizes: ['13mm Huggie'],
+    rating: 4.8,
+    reviewCount: 30,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Micro Pavé Cubic Zirconia',
+    karat: '18K Rose Gold Plated',
+    dimensions: 'Diameter: 13mm | Dome: 6mm',
+    details: [
+      'Smooth inner comfort curve',
+      'Hinged snap lock'
+    ],
+    careInstructions: [
+      'Keep dry and clean'
+    ],
+    specifications: {
+      'Style': 'Dome Huggie',
+      'Plating': 'Rose Gold Polish'
+    },
+    reviews: [
+      {
+        id: 'rev-25-1',
+        author: 'Divya Rao',
+        rating: 5,
+        date: 'February 10, 2026',
+        title: 'Super pretty and comfy',
+        comment: 'I can even sleep with them on, they are so comfortable and secure.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-026',
+    name: 'Velessa Two-Row Pavé Diamond Huggie Hoops',
+    slug: 'velessa-two-row-pave-diamond-huggie-hoops',
+    price: 699,
+    originalPrice: 1299,
+    category: 'Earrings',
+    collection: 'Everyday Elegance',
+    material: '1 Gram Gold Forming',
+    description: 'Timeless two-row pavé hoop earrings forged in 1 Gram 24K Gold Forming. Slim, radiant, and effortlessly sophisticated for office or evening wear.',
+    shortDescription: 'Classic dual-row pavé diamond huggie hoops in 1g gold forming.',
+    images: [
+      getImg('earrings-tworow-pave-huggie-1.png'),
+      getImg('earrings-tworow-pave-huggie-2.png'),
+    ],
+    sizes: ['12mm Huggie'],
+    rating: 4.9,
+    reviewCount: 41,
+    isNew: false,
+    isBestSeller: true,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Dual-Row Swiss American Diamonds',
+    karat: '1 Gram 24K Gold Forming',
+    dimensions: 'Diameter: 12mm | Width: 4mm',
+    details: [
+      'Dual parallel rows of brilliant pavé diamonds',
+      '24K micro gold forming for genuine gold shine'
+    ],
+    careInstructions: [
+      'Wipe with soft cloth'
+    ],
+    specifications: {
+      'Rows': '2 Rows Pavé',
+      'Plating': '1 Gram Gold Forming'
+    },
+    reviews: [
+      {
+        id: 'rev-26-1',
+        author: 'Sunita Aggarwal',
+        rating: 5,
+        date: 'January 28, 2026',
+        title: 'Perfect size for daily wear',
+        comment: 'Not too big, not too small. The gold color matches my real jewellery seamlessly.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-027',
+    name: 'Velessa South Sea Pearl & Diamond Halo Stud Earrings',
+    slug: 'velessa-south-sea-pearl-diamond-halo-stud-earrings',
+    price: 699,
+    originalPrice: 1349,
+    category: 'Earrings',
+    collection: 'Everyday Elegance',
+    material: 'Rhodium & Silver Polish',
+    description: 'Pure vintage majesty featuring radiant cultured South Sea shell pearls encircled by an exquisite floral halo of American Diamonds. Stamped with 750 hallmark impression.',
+    shortDescription: 'Lustrous South Sea shell pearl studs with sparkling diamond halo.',
+    images: [
+      getImg('earrings-pearl-halo-studs-1.png'),
+    ],
+    sizes: ['Standard Pierced (Push Back)'],
+    rating: 4.9,
+    reviewCount: 35,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'Cultured South Sea Shell Pearl & Swiss AD Halo',
+    karat: 'Platinum / Rhodium 750 Stamp',
+    dimensions: 'Diameter: 10mm | Pearl: 7mm',
+    details: [
+      'High-luster pearl with iridescent rainbow sheen',
+      'Surrounded by 12 brilliant-cut diamond accents'
+    ],
+    careInstructions: [
+      'Never spray perfume directly on pearls'
+    ],
+    specifications: {
+      'Pearl Type': 'South Sea Cultured Shell Pearl',
+      'Plating': 'Rhodium Platinum Polish'
+    },
+    reviews: [
+      {
+        id: 'rev-27-1',
+        author: 'Monika Bose',
+        rating: 5,
+        date: 'February 12, 2026',
+        title: 'Graceful and classy',
+        comment: 'The pearls have a lovely satin sheen. Looks wonderful with saris as well as formal suits.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-028',
+    name: 'Velessa Double Crescent Moon Pink Diamond Ear Jackets',
+    slug: 'velessa-double-crescent-moon-pink-diamond-ear-jackets',
+    price: 849,
+    originalPrice: 1599,
+    category: 'Earrings',
+    collection: 'Statement Jewellery',
+    material: 'Rose Gold Polish',
+    description: 'An avant-garde celestial creation featuring a stud solitaire with a detachable double crescent moon ear jacket paved with rare blush-pink sapphires and diamonds in warm rose gold.',
+    shortDescription: 'Celestial double crescent ear jackets with blush pink gemstones.',
+    images: [
+      getImg('earrings-crescent-moon-jackets.png'),
+    ],
+    sizes: ['Adjustable Two-Hole Ear Jacket'],
+    rating: 4.8,
+    reviewCount: 19,
+    isNew: true,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Hydro Pink Sapphire & American Diamonds',
+    karat: '18K Rose Gold Polish',
+    dimensions: 'Length: 16mm | Width: 12mm',
+    details: [
+      'Versatile 2-way wear: stud alone or with celestial jacket',
+      'Intricate dual crescent curves with micro-pavé pink stones'
+    ],
+    careInstructions: [
+      'Store in protective pouch'
+    ],
+    specifications: {
+      'Type': 'Ear Jacket / Front-Back Stud',
+      'Gems': 'Pink Sapphire & CZ',
+      'Finish': 'Rose Gold'
+    },
+    reviews: [
+      {
+        id: 'rev-28-1',
+        author: 'Tara Roy',
+        rating: 5,
+        date: 'March 04, 2026',
+        title: 'So whimsical and modern',
+        comment: 'Love that I can wear just the stud or hook the crescent jacket behind my earlobe!',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-029',
+    name: 'Velessa Rose Gold Floral Cluster & Teardrop American Diamond Drop Earrings',
+    slug: 'velessa-rose-gold-floral-cluster-teardrop-ad-drop-earrings',
+    price: 899,
+    originalPrice: 1699,
+    category: 'Earrings',
+    collection: 'Festive Collection',
+    material: 'Rose Gold Polish',
+    description: 'A regal royal drop earring featuring an intricate floral diamond cluster button suspending a delicate open teardrop frame with a floating pavé diamond medallion inside.',
+    shortDescription: 'Floral cluster and floating teardrop diamond drop earrings in rose gold.',
+    images: [
+      getImg('earrings-floral-cluster-drop-2.png'),
+      getImg('earrings-floral-cluster-drop-1.png'),
+    ],
+    sizes: ['Standard Pierced (Push Back)'],
+    rating: 5.0,
+    reviewCount: 47,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'Brilliant Round AD Cluster & Floating Medallion',
+    karat: '18K Rose Gold Plated',
+    dimensions: 'Drop Length: 26mm | Teardrop: 9mm',
+    details: [
+      'Includes pair views and macro studio detail',
+      'Articulated dangle link for subtle movement',
+      'Rich 18K rose gold warm tone'
+    ],
+    careInstructions: [
+      'Wipe with soft cloth after wearing'
+    ],
+    specifications: {
+      'Style': 'Dangle & Drop',
+      'Plating': '18K Rose Gold Finish'
+    },
+    reviews: [
+      {
+        id: 'rev-29-1',
+        author: 'Geetika Malhotra',
+        rating: 5,
+        date: 'March 01, 2026',
+        title: 'Wore to a wedding reception',
+        comment: 'Looked breathtaking with my lehenga. Everyone asked where I bought these!',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-030',
+    name: 'Velessa Rose Gold Teardrop Halo Diamond Drop Earrings',
+    slug: 'velessa-rose-gold-teardrop-halo-diamond-drop-earrings',
+    price: 799,
+    originalPrice: 1499,
+    category: 'Earrings',
+    collection: 'Signature Collection',
+    material: 'Rose Gold Polish',
+    description: 'Minimal yet captivating teardrop drop earrings with a pear-shaped diamond halo and floating central stone. Elegant and lightweight for both daily and special occasions.',
+    shortDescription: 'Teardrop halo drop earrings in rose gold with central diamond solitaire.',
+    images: [
+      getImg('earrings-teardrop-halo-1.png'),
+      getImg('earrings-teardrop-halo-2.png'),
+    ],
+    sizes: ['Standard Pierced'],
+    rating: 4.9,
+    reviewCount: 23,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Pear Halo & Center Diamond Accent',
+    karat: 'Rose Gold Polish',
+    dimensions: 'Length: 24mm',
+    details: [
+      'Double-sided mirror polish on back',
+      'Hypoallergenic post'
+    ],
+    careInstructions: [
+      'Keep in dry jewelry box'
+    ],
+    specifications: {
+      'Plating': '18K Rose Gold',
+      'Stone': 'Swiss AD'
+    },
+    reviews: [
+      {
+        id: 'rev-30-1',
+        author: 'Ananya Sen',
+        rating: 5,
+        date: 'February 14, 2026',
+        title: 'Beautiful simplicity',
+        comment: 'Very feminine and graceful teardrop design.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-031',
+    name: 'Velessa Rose Gold Triangular Solitaire American Diamond Studs',
+    slug: 'velessa-rose-gold-triangular-solitaire-ad-studs',
+    price: 549,
+    originalPrice: 999,
+    category: 'Earrings',
+    collection: 'Minimal Collection',
+    material: 'Rose Gold Polish',
+    description: 'Modern geometric studs featuring a trillion-cut triangular solitaire American Diamond set in a sleek three-prong rose gold basket.',
+    shortDescription: 'Trillion-cut triangular solitaire diamond studs in rose gold.',
+    images: [
+      getImg('earrings-triangular-solitaire.png'),
+    ],
+    sizes: ['Standard Pierced'],
+    rating: 4.8,
+    reviewCount: 31,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Trillion Cut Solitaire American Diamond',
+    karat: '18K Rose Gold Plated',
+    dimensions: 'Width: 8mm',
+    details: [
+      'Sharp modern trillion cut with maximum light reflection',
+      'Low profile basket for comfortable sleep wear'
+    ],
+    careInstructions: [
+      'Wipe clean after use'
+    ],
+    specifications: {
+      'Stone Shape': 'Trillion / Triangular',
+      'Plating': 'Rose Gold'
+    },
+    reviews: [
+      {
+        id: 'rev-31-1',
+        author: 'Komal Singhal',
+        rating: 5,
+        date: 'January 19, 2026',
+        title: 'Unique geometric studs',
+        comment: 'Different from regular round studs. The triangular cut looks very sharp and stylish.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-032',
+    name: 'Velessa Marquise Filigree Rose Gold Dangle Earrings',
+    slug: 'velessa-marquise-filigree-rose-gold-dangle-earrings',
+    price: 749,
+    originalPrice: 1399,
+    category: 'Earrings',
+    collection: 'Festive Collection',
+    material: 'Rose Gold Polish',
+    description: 'Intricate royal filigree openwork in an elongated marquise leaf silhouette, highlighted with micro-faceted diamonds along delicate lattice veins.',
+    shortDescription: 'Elongated marquise filigree openwork dangle earrings in rose gold.',
+    images: [
+      getImg('earrings-marquise-filigree-1.png'),
+      getImg('earrings-marquise-filigree-2.png'),
+    ],
+    sizes: ['Standard Pierced'],
+    rating: 4.9,
+    reviewCount: 26,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Micro AD Accents',
+    karat: 'Rose Gold Polish',
+    dimensions: 'Length: 32mm | Width: 12mm',
+    details: [
+      'Delicate openwork keeps earrings ultra lightweight',
+      'Elongated silhouette flatters all face shapes'
+    ],
+    careInstructions: [
+      'Store flat to prevent bending'
+    ],
+    specifications: {
+      'Style': 'Filigree Chandelier Dangle',
+      'Plating': '18K Rose Gold'
+    },
+    reviews: [
+      {
+        id: 'rev-32-1',
+        author: 'Pallavi Varma',
+        rating: 5,
+        date: 'February 05, 2026',
+        title: 'Feather light!',
+        comment: 'Despite the length, they weigh almost nothing. Wore them for 8 hours without any ear fatigue.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-033',
+    name: 'Velessa Circular Lattice Pavé Diamond Stud Earrings',
+    slug: 'velessa-circular-lattice-pave-diamond-studs',
+    price: 599,
+    originalPrice: 1099,
+    category: 'Earrings',
+    collection: 'Minimal Collection',
+    material: 'Rose Gold Polish',
+    description: 'An openwork medallion disc stud earring with a cross-lattice diamond matrix surrounded by a halo ring of micro-pavé stones in 18K rose gold.',
+    shortDescription: 'Circular openwork lattice stud earrings with pavé diamond matrix.',
+    images: [
+      getImg('earrings-circular-lattice-pave.png'),
+    ],
+    sizes: ['Standard Pierced'],
+    rating: 4.8,
+    reviewCount: 18,
+    isNew: false,
+    isBestSeller: false,
+    isFeatured: false,
+    inStock: true,
+    gemstone: 'Pavé Set Cubic Zirconia',
+    karat: '18K Rose Gold Polish',
+    dimensions: 'Diameter: 11mm',
+    details: [
+      'Architectural cross-lattice geometric pattern',
+      'Smooth flush setting prevents snagging'
+    ],
+    careInstructions: [
+      'Store in dry pouch'
+    ],
+    specifications: {
+      'Design': 'Lattice Medallion',
+      'Plating': 'Rose Gold Polish'
+    },
+    reviews: [
+      {
+        id: 'rev-33-1',
+        author: 'Neha Deshmukh',
+        rating: 5,
+        date: 'January 22, 2026',
+        title: 'Very chic design',
+        comment: 'Looks much more expensive than it is. The open lattice gives it a high-end designer feel.',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-034',
+    name: 'Velessa 22K Gold Knotted Heart Pendant Necklace',
+    slug: 'velessa-22k-gold-knotted-heart-pendant-necklace',
+    price: 1199,
+    originalPrice: 2199,
+    category: 'Pendants',
+    collection: 'Signature Collection',
+    material: '1 Gram Gold Forming',
+    description: 'A stunning sculptural entwined heart pendant crafted with pure 22K Gold Forming on an opulent round snake chain. A timeless symbol of everlasting love and sophisticated luxury with 100% real gold luster.',
+    shortDescription: 'Sculptural 22K gold forming entwined heart on round snake chain.',
+    images: [
+      getImg('necklace-knotted-heart-pendant.png'),
+    ],
+    sizes: ['18 Inch Snake Chain'],
+    rating: 5.0,
+    reviewCount: 56,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'None (Pure High-Polish Gold Sculptural)',
+    karat: '1 Gram 22K Gold Forming',
+    dimensions: 'Pendant: 22mm x 20mm | Chain: 18 inch snake chain',
+    details: [
+      'Sculptural infinity knotted heart centerpiece',
+      'Includes premium solid round snake chain with lobster clasp',
+      '1 Gram 22K Real Gold Forming with anti-tarnish protective lacquer'
+    ],
+    careInstructions: [
+      'Store flat in Velessa velvet box'
+    ],
+    specifications: {
+      'Necklace Type': 'Pendant with Snake Chain',
+      'Plating': '1 Gram 22K Gold Forming',
+      'Clasp': 'Heavy Duty Lobster Lock'
+    },
+    reviews: [
+      {
+        id: 'rev-34-1',
+        author: 'Aarti Bansal',
+        rating: 5,
+        date: 'March 03, 2026',
+        title: 'Looks 100% like real 22k gold chain and pendant',
+        comment: 'The snake chain is so smooth and does not tangle hair. The knotted heart is gorgeous!',
+        verified: true
+      }
+    ]
+  },
+  {
+    id: 'vel-035',
+    name: 'Velessa 18K Gold Cushion Mother-of-Pearl Pendant Necklace',
+    slug: 'velessa-gold-mother-of-pearl-cushion-pendant-necklace',
+    price: 1399,
+    originalPrice: 2499,
+    category: 'Pendants',
+    collection: 'Signature Collection',
+    material: '18k Yellow Gold',
+    description: 'An opulent bezel-set natural mother-of-pearl cushion tablet set in a brushed satin gold bezel frame, suspended on an 18K yellow gold chain. Iridescent pearlescent glow that radiates timeless sophistication.',
+    shortDescription: 'Natural iridescent mother-of-pearl cushion tablet pendant in 18K gold.',
+    images: [
+      getImg('necklace-mop-cushion-pendant-1.png'),
+      getImg('necklace-mop-cushion-pendant-2.png'),
+    ],
+    sizes: ['18 Inch Chain + 2 Inch Extender'],
+    rating: 4.9,
+    reviewCount: 39,
+    isNew: true,
+    isBestSeller: true,
+    isFeatured: true,
+    inStock: true,
+    gemstone: 'Natural Iridescent Mother-of-Pearl Shell',
+    karat: '18K Yellow Gold Forming',
+    dimensions: 'Cushion: 14mm x 14mm | Chain: 18 inch chain',
+    details: [
+      'Genuine natural mother-of-pearl cushion slice with natural luster',
+      'Subtle satin brushed gold bezel casing',
+      'Multi-angle photoshoot certified'
+    ],
+    careInstructions: [
+      'Avoid harsh chemicals and ultrasonic cleaners'
+    ],
+    specifications: {
+      'Gem': 'Natural Mother-of-Pearl Shell',
+      'Metal Finish': '18K Yellow Gold Forming'
+    },
+    reviews: [
+      {
+        id: 'rev-35-1',
+        author: 'Simran Khurana',
+        rating: 5,
+        date: 'March 02, 2026',
+        title: 'Understated luxury at its finest',
+        comment: 'The mother-of-pearl has an incredible iridescence in sunlight. The bezel setting is so clean and modern.',
+        verified: true
+      }
+    ]
+  }
+
 ];

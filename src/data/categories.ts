@@ -1,14 +1,16 @@
 import { CategoryInfo } from '../types/product';
 
+const getImg = (name: string) => `${import.meta.env.BASE_URL}images/${name}`;
+
 export const CATEGORIES: CategoryInfo[] = [
   {
     id: '1-gram-gold-forming',
     name: '1 Gram Gold Forming',
     slug: '1-gram-gold-forming',
     description: 'Looks 100% like real 22k gold. 24K micro gold forming technique with anti-tarnish coating.',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80',
-    itemCount: 12,
-    startingPrice: 699,
+    image: getImg('earrings-twin-swan-velvet.png'),
+    itemCount: 16,
+    startingPrice: 449,
   },
   {
     id: 'necklaces',
@@ -24,8 +26,8 @@ export const CATEGORIES: CategoryInfo[] = [
     name: 'Earrings',
     slug: 'earrings',
     description: 'Heritage Kundan Chandbalis, 1 gram gold jhumkas, and sparkling American Diamond studs.',
-    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=900&q=80',
-    itemCount: 10,
+    image: getImg('earrings-velessa-artdeco-fan.jpeg'),
+    itemCount: 22,
     startingPrice: 449,
   },
   {
@@ -68,9 +70,9 @@ export const CATEGORIES: CategoryInfo[] = [
     id: 'pendants',
     name: 'Pendants',
     slug: 'pendants',
-    description: 'Temple deity lockets, floral American Diamond pendants, and evil-eye daily wear pendants.',
-    image: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=900&q=80',
-    itemCount: 5,
-    startingPrice: 499,
+    description: 'Sculptural knotted gold pendants, mother-of-pearl cushions, and daily wear diamond lockets.',
+    image: getImg('necklace-knotted-heart-pendant.png'),
+    itemCount: 8,
+    startingPrice: 599,
   },
 ];
