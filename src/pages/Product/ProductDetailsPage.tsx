@@ -612,7 +612,7 @@ export const ProductDetailsPage: React.FC = () => {
       {/* Mobile App Sticky Buy/Action Bar */}
       <aside
         aria-label="Quick acquisition bar"
-        className="fixed bottom-16 inset-x-0 z-30 lg:hidden bg-ivory/95 backdrop-blur-xl border-t border-champagne/30 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-2.5 transition-all"
+        className="fixed bottom-[4.75rem] inset-x-0 z-30 lg:hidden bg-ivory/95 backdrop-blur-xl border-t border-champagne/30 shadow-[0_-4px_20px_rgba(0,0,0,0.08)] px-4 py-2.5 transition-all"
       >
         <div className="flex items-center justify-between gap-3 max-w-lg mx-auto">
           <div className="flex items-center gap-2.5 min-w-0">
