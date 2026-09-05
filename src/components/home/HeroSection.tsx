@@ -5,7 +5,7 @@ import { Button } from '../common/Button';
 
 export const HeroSection: React.FC = () => {
   return (
-    <section className="relative min-h-[82vh] lg:min-h-[calc(100vh-6rem)] flex items-center justify-center overflow-hidden bg-charcoal">
+    <section className="relative min-h-[75vh] lg:min-h-[82vh] flex flex-col items-center justify-start overflow-hidden bg-charcoal">
       {/* Background Hero Image with atmospheric overlays */}
       <div className="absolute inset-0 z-0">
         <img
@@ -19,9 +19,9 @@ export const HeroSection: React.FC = () => {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-ivory pt-6 sm:pt-8 lg:pt-10 pb-12 sm:pb-16 animate-fade-in">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-ivory pt-3 sm:pt-4 lg:pt-6 pb-10 sm:pb-14 animate-fade-in">
         {/* Kicker badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal/60 backdrop-blur-md border border-champagne/40 text-[11px] font-sans uppercase tracking-[0.3em] text-champagne mb-4 sm:mb-5">
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal/60 backdrop-blur-md border border-champagne/40 text-[11px] font-sans uppercase tracking-[0.3em] text-champagne mb-3 sm:mb-4">
           <Sparkles className="w-3.5 h-3.5" />
           <span>Haute Joaillerie & Fine Heirlooms</span>
         </div>
