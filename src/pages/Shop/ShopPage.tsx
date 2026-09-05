@@ -9,6 +9,7 @@ import { ProductGrid } from '../../components/product/ProductGrid';
 import { ProductFilters } from '../../components/product/ProductFilters';
 import { QuickViewModal } from '../../components/product/QuickViewModal';
 import { Button } from '../../components/common/Button';
+import jewelleryBackdropImg from '../../assets/images/jewellery_banner_backdrop.jpg';
 
 const INITIAL_FILTERS: FilterState = {
   category: 'All',
@@ -90,15 +91,18 @@ export const ShopPage: React.FC = () => {
     <div className="min-h-screen bg-ivory pb-24">
       {/* Header Banner */}
       <div className="relative bg-beige/30 border-b border-beige py-10 sm:py-14 overflow-hidden">
-        {/* Background Watermark Label ("back side" watermark) */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
-          <span className="font-serif text-6xl sm:text-8xl md:text-9xl tracking-[0.25em] uppercase text-charcoal/[0.035] leading-none whitespace-nowrap">
-            VELESSA
-          </span>
+        {/* Background Jewellery Image on the back side */}
+        <div className="absolute inset-0 pointer-events-none select-none overflow-hidden z-0" aria-hidden="true">
+          <img
+            src={jewelleryBackdropImg}
+            alt="1 Gram Gold Forming Jewellery"
+            className="w-full h-full object-cover object-center scale-105 filter brightness-[0.95] contrast-[1.05] opacity-35"
+          />
+          {/* Subtle soft gradient fade into ivory/beige */}
+          <div className="absolute inset-0 bg-gradient-to-r from-ivory/85 via-ivory/35 to-ivory/85" />
+          <div className="absolute inset-0 bg-gradient-to-b from-beige/40 via-transparent to-ivory/60" />
+          <div className="absolute inset-0 bg-radial-gradient from-champagne/20 via-transparent to-ivory/50" />
         </div>
-
-        {/* Ambient Subtle Radial Glow in back side */}
-        <div className="absolute inset-0 bg-radial-gradient from-champagne/15 via-transparent to-transparent pointer-events-none" aria-hidden="true" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
           {/* Kicker Pill Label / Badge */}
