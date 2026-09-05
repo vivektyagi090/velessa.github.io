@@ -160,8 +160,20 @@ export const Header: React.FC = () => {
                 </button>
               </div>
 
-              {/* Mobile spacer balancing the hamburger button so logo remains perfectly centered */}
-              <div className="w-8 lg:hidden" aria-hidden="true" />
+              {/* Mobile Sign Up / Account Button */}
+              <Link
+                to={isAuthenticated ? '/account' : '/login'}
+                className="lg:hidden p-2 text-charcoal hover:text-champagne transition-colors flex items-center justify-center -mr-2"
+                aria-label={isAuthenticated ? 'My Account' : 'Sign In or Sign Up'}
+                title={isAuthenticated ? `Hello, ${user?.firstName}` : 'Sign In / Sign Up'}
+              >
+                <div className="relative flex items-center justify-center">
+                  <User className="w-5 h-5 stroke-[1.8]" />
+                  {isAuthenticated && (
+                    <span className="absolute -top-0.5 -right-0.5 w-2 h-2 bg-champagne rounded-full ring-2 ring-ivory" />
+                  )}
+                </div>
+              </Link>
             </div>
           </div>
         </div>
