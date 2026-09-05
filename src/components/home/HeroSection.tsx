@@ -20,10 +20,27 @@ export const HeroSection: React.FC = () => {
 
       {/* Hero Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-ivory pt-3 sm:pt-4 lg:pt-6 pb-10 sm:pb-14 animate-fade-in">
-        {/* Kicker badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal/60 backdrop-blur-md border border-champagne/40 text-[11px] font-sans uppercase tracking-[0.3em] text-champagne mb-3 sm:mb-4">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Haute Joaillerie & Fine Heirlooms</span>
+        {/* Kicker & Festive Celebration Badges */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-3 sm:mb-4">
+          <Link
+            to="/shop?collection=Festive+Collection"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-amber-950/80 via-amber-900/80 to-rose-950/80 backdrop-blur-md border border-amber-400/50 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.2em] text-amber-200 shadow-gold-glow hover:border-amber-300 transition-all group"
+          >
+            <span className="text-sm">🌺</span>
+            <span>Ganpati Utsav Celebration • Flat 15% OFF</span>
+            <span className="text-amber-400/70 hidden sm:inline">|</span>
+            <span className="hidden sm:inline font-mono font-bold bg-amber-800/80 px-2 py-0.5 rounded text-[10px] text-white">
+              CODE: GANPATI15
+            </span>
+          </Link>
+
+          <Link
+            to="/shop?filter=new"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-charcoal/60 backdrop-blur-md border border-champagne/40 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.2em] text-champagne hover:bg-charcoal/80 transition-all"
+          >
+            <Sparkles className="w-3.5 h-3.5 text-champagne" />
+            <span>New Arrivals 2026</span>
+          </Link>
         </div>
 
         {/* Elegant Headline */}

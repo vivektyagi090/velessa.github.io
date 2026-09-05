@@ -59,7 +59,13 @@ export const productService = {
     }
 
     if (filter.collection && filter.collection !== 'All') {
-      results = results.filter((p) => p.collection.toLowerCase() === filter.collection?.toLowerCase());
+      if (filter.collection === 'New Arrivals') {
+        results = results.filter((p) => p.isNew || p.collection === 'New Arrivals');
+      } else if (filter.collection === 'Festive Collection') {
+        results = results.filter((p) => p.collection === 'Festive Collection' || Boolean(p.festiveTag));
+      } else {
+        results = results.filter((p) => p.collection.toLowerCase() === filter.collection?.toLowerCase());
+      }
     }
 
     if (filter.material && filter.material !== 'All') {

@@ -11,6 +11,12 @@ const PROMO_CODES: Record<string, PromoDiscount> = {
     description: '10% Welcome Discount on First Order',
     minSpend: 0
   },
+  'GANPATI15': {
+    code: 'GANPATI15',
+    percentage: 15,
+    description: '15% Ganpati Utsav Festive Celebration Offer',
+    minSpend: 499
+  },
   'GOLD15': {
     code: 'GOLD15',
     percentage: 15,
