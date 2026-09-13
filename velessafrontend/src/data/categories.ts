@@ -1,0 +1,78 @@
+import { CategoryInfo } from '../types/product';
+
+const getImg = (name: string) => `${import.meta.env.BASE_URL}images/${name}`;
+
+export const CATEGORIES: CategoryInfo[] = [
+  {
+    id: '1-gram-gold-forming',
+    name: '1 Gram Gold Forming',
+    slug: '1-gram-gold-forming',
+    description: 'Looks 100% like real 22k gold. 24K micro gold forming technique with anti-tarnish coating.',
+    image: getImg('earrings-twin-swan-velvet.png'),
+    itemCount: 16,
+    startingPrice: 449,
+  },
+  {
+    id: 'necklaces',
+    name: 'Necklaces',
+    slug: 'necklaces',
+    description: 'Opulent bridal Kundan chokers, temple antique harams, and lightweight daily wear chains.',
+    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=900&q=80',
+    itemCount: 8,
+    startingPrice: 1299,
+  },
+  {
+    id: 'earrings',
+    name: 'Earrings',
+    slug: 'earrings',
+    description: 'Heritage Kundan Chandbalis, 1 gram gold jhumkas, and sparkling American Diamond studs.',
+    image: getImg('earrings-velessa-artdeco-fan.jpeg'),
+    itemCount: 22,
+    startingPrice: 449,
+  },
+  {
+    id: 'bangles',
+    name: 'Bangles',
+    slug: 'bangles',
+    description: 'Rajwadi antique kadas, daily wear 1 gram gold micro-plated bangles, and stone-studded chudas.',
+    image: 'https://images.unsplash.com/photo-1611591475825-9276c1f76d45?auto=format&fit=crop&w=900&q=80',
+    itemCount: 6,
+    startingPrice: 899,
+  },
+  {
+    id: 'mangalsutras',
+    name: 'Mangalsutras',
+    slug: 'mangalsutras',
+    description: 'Sacred black bead chains with 1 gram gold forming pendants and modern AD mini mangalsutras.',
+    image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80',
+    itemCount: 6,
+    startingPrice: 699,
+  },
+  {
+    id: 'rings',
+    name: 'Rings',
+    slug: 'rings',
+    description: 'AAA+ American Diamond solitaire rings, Kundan cocktail rings, and adjustable gold bands.',
+    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=900&q=80',
+    itemCount: 8,
+    startingPrice: 399,
+  },
+  {
+    id: 'bracelets',
+    name: 'Bracelets',
+    slug: 'bracelets',
+    description: 'Flexible American Diamond tennis bracelets and 1 gram gold forming linked charm bracelets.',
+    image: 'https://images.unsplash.com/photo-1543290954-518482ff7698?auto=format&fit=crop&w=900&q=80',
+    itemCount: 5,
+    startingPrice: 599,
+  },
+  {
+    id: 'pendants',
+    name: 'Pendants',
+    slug: 'pendants',
+    description: 'Sculptural knotted gold pendants, mother-of-pearl cushions, and daily wear diamond lockets.',
+    image: getImg('necklace-knotted-heart-pendant.png'),
+    itemCount: 8,
+    startingPrice: 599,
+  },
+];

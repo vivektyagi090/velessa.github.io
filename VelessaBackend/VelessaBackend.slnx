@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="Velessa.API/Velessa.API.csproj" />
+  <Project Path="Velessa.Application/Velessa.Application.csproj" />
+  <Project Path="Velessa.Domain/Velessa.Domain.csproj" />
+  <Project Path="Velessa.Infrastructure/Velessa.Infrastructure.csproj" />
+</Solution>

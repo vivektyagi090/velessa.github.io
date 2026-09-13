@@ -1,0 +1,27 @@
+# Node / Frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+.npm/
+
+# .NET / Backend
+bin/
+obj/
+*.user
+*.userosscache
+*.suo
+.vs/
+*.db
+*.sqlite
+*.mdf
+*.ldf
+
+# Logs & IDE
+.idea/
+.vscode/
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
