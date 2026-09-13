@@ -91,25 +91,43 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// 6. Initialise and seed database
-using (var scope = app.Services.CreateScope())
+// 6. Initialise and seed database (resilient to cloud container startups)
+try
 {
+    using var scope = app.Services.CreateScope();
     var initialiser = scope.ServiceProvider.GetRequiredService<ApplicationDbContextInitialiser>();
     await initialiser.InitialiseAsync();
     await initialiser.SeedAsync();
 }
-
-// 7. Configure HTTP pipeline
-if (app.Environment.IsDevelopment())
+catch (Exception ex)
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "Velessa API v1");
-    });
+    var logger = app.Services.GetRequiredService<ILogger<Program>>();
+    logger.LogWarning(ex, "Database initialisation skipped or deferred: {Message}", ex.Message);
 }
 
-app.UseHttpsRedirection();
+// 7. Configure HTTP pipeline (Swagger enabled for API testing on Render/Cloud)
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Velessa API v1");
+    c.RoutePrefix = "swagger";
+});
+
+// Render / Container Health Check & Root landing
+app.MapGet("/", () => Results.Ok(new
+{
+    status = "online",
+    service = "Velessa Haute Joaillerie API",
+    documentation = "/swagger",
+    timestamp = DateTime.UtcNow
+}));
+app.MapGet("/health", () => Results.Ok(new { status = "healthy", time = DateTime.UtcNow }));
+
+if (!app.Environment.IsProduction())
+{
+    app.UseHttpsRedirection();
+}
+
 app.UseCors("AllowFrontend");
 
 app.UseAuthentication();
