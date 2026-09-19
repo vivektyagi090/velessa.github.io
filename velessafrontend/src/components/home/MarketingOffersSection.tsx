@@ -20,6 +20,12 @@ import kundanBannerImg from '../../assets/images/kundan_offer_banner.jpg';
 import banglesBannerImg from '../../assets/images/bangles_offer_banner.jpg';
 import jewelleryBackdropImg from '../../assets/images/jewellery_banner_backdrop.jpg';
 
+import festiveBannerMobileImg from '../../assets/images/festive_offer_banner_mobile.jpg';
+import diamondBannerMobileImg from '../../assets/images/diamond_offer_banner_mobile.jpg';
+import kundanBannerMobileImg from '../../assets/images/kundan_offer_banner_mobile.jpg';
+import banglesBannerMobileImg from '../../assets/images/bangles_offer_banner_mobile.jpg';
+import jewelleryBackdropMobileImg from '../../assets/images/jewellery_banner_backdrop_mobile.jpg';
+
 interface OfferSlide {
   id: string;
   badge: string;
@@ -33,6 +39,7 @@ interface OfferSlide {
   ctaText: string;
   ctaLink: string;
   image: string;
+  mobileImage?: string;
 }
 
 const OFFERS: OfferSlide[] = [
@@ -49,6 +56,7 @@ const OFFERS: OfferSlide[] = [
     ctaText: 'Claim Festive Offer',
     ctaLink: '/shop?collection=Signature+Collection',
     image: festiveBannerImg,
+    mobileImage: festiveBannerMobileImg,
   },
   {
     id: 'bridal-solitaire',
@@ -63,6 +71,7 @@ const OFFERS: OfferSlide[] = [
     ctaText: 'Explore Bridal Offers',
     ctaLink: '/shop?category=Necklaces',
     image: diamondBannerImg,
+    mobileImage: diamondBannerMobileImg,
   },
   {
     id: 'kundan-meenakari',
@@ -77,6 +86,7 @@ const OFFERS: OfferSlide[] = [
     ctaText: 'Shop Kundan Sets',
     ctaLink: '/shop?material=Kundan+%26+Meenakari',
     image: kundanBannerImg,
+    mobileImage: kundanBannerMobileImg,
   },
   {
     id: 'temple-bangles',
@@ -91,6 +101,7 @@ const OFFERS: OfferSlide[] = [
     ctaText: 'Shop Bangles & Kadas',
     ctaLink: '/shop?category=Bangles',
     image: banglesBannerImg,
+    mobileImage: banglesBannerMobileImg,
   },
   {
     id: 'imperial-necklace',
@@ -105,6 +116,7 @@ const OFFERS: OfferSlide[] = [
     ctaText: 'Shop Necklace Sets',
     ctaLink: '/shop?category=Necklaces',
     image: jewelleryBackdropImg,
+    mobileImage: jewelleryBackdropMobileImg,
   },
 ];
 
@@ -133,6 +145,14 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
       });
     }, 1000);
     return () => clearInterval(timer);
+  }, []);
+
+  // Preload all banner images into memory cache so every slide renders instantly
+  useEffect(() => {
+    OFFERS.forEach((offer) => {
+      const img = new Image();
+      img.src = offer.image;
+    });
   }, []);
 
   // Auto advance slide every 6 seconds (pauses when user hovers)
@@ -168,32 +188,156 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
         {/* Main Hero Offer Showcase Card - Grand & Expansive */}
         <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-charcoal border border-champagne/40 text-ivory">
           
-          {/* Background Image Container with Expanded Height */}
-          <div className="relative min-h-[580px] sm:min-h-[560px] lg:min-h-[650px] flex items-center">
+          {/* MOBILE LAYOUT (< md): Clean Split View - Clear Unobstructed Visual + Sleek Luxury Action Bar */}
+          <div className="block md:hidden">
+            {/* 1. Clear Unobstructed Jewellery Showcase (Tap to Open Offer) */}
+            <Link 
+              to={activeOffer.ctaLink} 
+              className="relative aspect-[16/11] w-full overflow-hidden bg-black/40 block group cursor-pointer"
+              title={`View ${activeOffer.title}`}
+            >
+              <img
+                src={activeOffer.image}
+                alt={activeOffer.title}
+                loading="eager"
+                fetchPriority="high"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out filter brightness-[1.02] contrast-[1.02]"
+              />
+
+              {/* Floating Minimal Badges: Corner Pill Tags that don't cover the jewelry */}
+              <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 border border-champagne/60 text-champagne text-[10px] uppercase tracking-wider font-sans font-medium backdrop-blur-md shadow-md">
+                  <Sparkles className="w-3 h-3 text-champagne" />
+                  <span>{activeOffer.discountBadge}</span>
+                </div>
+
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 border border-ivory/25 text-ivory text-[10px] font-mono backdrop-blur-md shadow-md">
+                  <Timer className="w-3.5 h-3.5 text-champagne animate-pulse" />
+                  <span className="text-champagne font-bold">
+                    {String(timeLeft.hours).padStart(2, '0')}h : {String(timeLeft.minutes).padStart(2, '0')}m : {String(timeLeft.seconds).padStart(2, '0')}s
+                  </span>
+                </div>
+              </div>
+
+              {/* Soft Bottom Shadow Edge */}
+              <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#141312] via-[#141312]/50 to-transparent" />
+            </Link>
+
+            {/* 2. Refined, High-End Luxury Offer Panel */}
+            <div className="px-5 pt-3.5 pb-4 space-y-2.5 bg-[#141312] border-t border-champagne/20">
+              
+              {/* Header: Title & Highlight (Tap to Open) */}
+              <Link to={activeOffer.ctaLink} className="block group">
+                <div className="flex items-center justify-between">
+                  <span className="block text-[10px] uppercase tracking-[0.25em] text-champagne/90 font-sans font-medium">
+                    {activeOffer.title}
+                  </span>
+                  <span className="text-[10px] font-sans text-champagne/80 group-hover:text-champagne transition-colors flex items-center gap-0.5 font-medium">
+                    Shop Now <ChevronRight className="w-3 h-3 inline" />
+                  </span>
+                </div>
+                <h3 className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-white mt-0.5 group-hover:brightness-110 transition-all">
+                  <span className="gold-gradient-text">{activeOffer.highlightText}</span>
+                </h3>
+              </Link>
+
+              {/* Perk highlight chip instead of chopped off text */}
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 border border-champagne/30 text-champagne text-[11px] font-sans">
+                <span>{activeOffer.perk}</span>
+              </div>
+
+              {/* Action Area: Sleek Coupon Voucher + Explore CTA Button */}
+              <div className="pt-0.5 flex items-stretch gap-2.5">
+                {/* Coupon Code Voucher Chip */}
+                <div className="flex-1 inline-flex items-center justify-between px-3 py-2 rounded-lg bg-black/60 border border-dashed border-champagne/60 backdrop-blur-md">
+                  <div className="flex items-center gap-1.5">
+                    <Tag className="w-3.5 h-3.5 text-champagne shrink-0" />
+                    <span className="text-champagne font-mono font-bold text-xs tracking-wider">{activeOffer.couponCode}</span>
+                  </div>
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      handleCopyCode(activeOffer.couponCode);
+                    }}
+                    className="text-[10px] font-sans px-2.5 py-0.5 rounded bg-champagne text-charcoal font-semibold hover:bg-champagne-light active:scale-95 transition-all cursor-pointer shadow-xs"
+                    title="Click to copy coupon code"
+                  >
+                    {copiedCode === activeOffer.couponCode ? 'COPIED!' : 'COPY'}
+                  </button>
+                </div>
+
+                {/* Claim Offer CTA Button */}
+                <Link to={activeOffer.ctaLink} className="flex-1">
+                  <button className="w-full h-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-champagne via-champagne-light to-champagne text-charcoal font-serif tracking-wider uppercase text-[11px] font-bold shadow-gold-glow hover:brightness-105 active:scale-98 transition-all cursor-pointer">
+                    <span>{activeOffer.ctaText}</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
+                </Link>
+              </div>
+
+              {/* Mobile Slide Indicator Dots & Arrows */}
+              <div className="pt-1 flex items-center justify-center gap-3">
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev === 0 ? OFFERS.length - 1 : prev - 1))}
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-ivory/60 hover:text-champagne active:scale-95 cursor-pointer"
+                  aria-label="Previous Offer"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </button>
+
+                <div className="flex items-center gap-2">
+                  {OFFERS.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentSlide(idx)}
+                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                        currentSlide === idx ? 'w-6 bg-champagne shadow-gold-glow' : 'w-1.5 bg-ivory/30'
+                      }`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setCurrentSlide((prev) => (prev + 1) % OFFERS.length)}
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-ivory/60 hover:text-champagne active:scale-95 cursor-pointer"
+                  aria-label="Next Offer"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* DESKTOP LAYOUT (md: and up): Grand Editorial Hero Showcase */}
+          <div className="hidden md:flex relative min-h-[560px] lg:min-h-[650px] items-center">
             <div className="absolute inset-0 z-0">
               <img
                 src={activeOffer.image}
                 alt={activeOffer.title}
+                loading="eager"
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center transition-all duration-700 ease-out filter brightness-[0.98] contrast-[1.03]"
               />
-              {/* Premium Luxury Vignette - gentle on the left for text contrast, completely clear on the jewellery */}
-              <div className="absolute inset-0 bg-gradient-to-t from-charcoal/90 via-charcoal/60 via-55% to-transparent lg:bg-gradient-to-r lg:from-charcoal/85 lg:via-charcoal/40 lg:via-45% lg:to-transparent" />
+              {/* Premium Luxury Vignette for Desktop */}
+              <div className="absolute inset-0 bg-gradient-to-r from-charcoal/90 via-charcoal/45 via-45% to-transparent" />
             </div>
 
             {/* Decorative Gold Inner Border */}
-            <div className="absolute inset-3 sm:inset-6 border border-champagne/25 rounded-xl sm:rounded-2xl pointer-events-none z-10 hidden sm:block" />
+            <div className="absolute inset-4 sm:inset-6 border border-champagne/25 rounded-xl sm:rounded-2xl pointer-events-none z-10" />
 
-            {/* Slide Content Overlay - Generous left padding to keep text completely clear of navigation buttons */}
-            <div className="relative z-20 w-full py-8 sm:py-12 lg:py-16 px-6 sm:pl-28 sm:pr-8 lg:pl-32 lg:pr-12 max-w-3xl space-y-5 sm:space-y-6">
+            {/* Desktop Slide Content Overlay */}
+            <div className="relative z-20 w-full py-12 lg:py-16 pl-24 pr-8 lg:pl-32 lg:pr-12 max-w-3xl space-y-6">
               
               {/* Top Row: Kicker Pill & Live Urgency Timer */}
               <div className="flex flex-wrap items-center gap-3">
-                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 border border-champagne/60 text-champagne text-[10px] sm:text-[11px] uppercase tracking-[0.25em] font-sans font-medium backdrop-blur-md shadow-md">
+                <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-black/60 border border-champagne/60 text-champagne text-[11px] uppercase tracking-[0.25em] font-sans font-medium backdrop-blur-md shadow-md">
                   <Sparkles className="w-3.5 h-3.5 text-champagne shrink-0" />
                   <span>{activeOffer.badge}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/65 border border-ivory/25 text-ivory text-[10px] sm:text-[11px] font-mono tracking-wider backdrop-blur-md shadow-md">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/65 border border-ivory/25 text-ivory text-[11px] font-mono tracking-wider backdrop-blur-md shadow-md">
                   <Timer className="w-3.5 h-3.5 text-champagne animate-pulse" />
                   <span>Ends in:</span>
                   <span className="text-champagne font-bold">
@@ -207,13 +351,13 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
                 <span className="block text-xs uppercase tracking-[0.3em] text-champagne font-sans font-medium drop-shadow-sm">
                   {activeOffer.title}
                 </span>
-                <h2 className="font-serif text-3xl sm:text-5xl lg:text-6xl font-light tracking-tight leading-[1.08] text-white drop-shadow-md">
+                <h2 className="font-serif text-4xl lg:text-6xl font-light tracking-tight leading-[1.08] text-white drop-shadow-md">
                   <span className="gold-gradient-text font-normal">{activeOffer.highlightText}</span>
                 </h2>
               </div>
 
-              {/* Description - Completely clear of side arrows */}
-              <p className="text-xs sm:text-sm md:text-base text-ivory font-sans font-light leading-relaxed max-w-xl drop-shadow-sm">
+              {/* Description */}
+              <p className="text-sm md:text-base text-ivory font-sans font-light leading-relaxed max-w-xl drop-shadow-sm">
                 {activeOffer.description}
               </p>
 
@@ -223,8 +367,7 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
               </div>
 
               {/* Action Area: Coupon Code + Shop CTA */}
-              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                
+              <div className="pt-2 flex items-center gap-4">
                 {/* Coupon Code Copy Box */}
                 <div className="inline-flex items-center justify-between gap-3 px-4 py-2.5 rounded-md bg-black/75 border border-champagne/60 text-xs font-mono backdrop-blur-md shadow-inner">
                   <div className="flex items-center gap-2">
@@ -253,7 +396,7 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
 
                 {/* Claim Offer CTA Button */}
                 <Link to={activeOffer.ctaLink}>
-                  <button className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-md bg-gradient-to-r from-champagne via-champagne-light to-champagne text-charcoal font-serif tracking-wider uppercase text-xs font-semibold shadow-gold-glow hover:brightness-105 active:scale-98 transition-all cursor-pointer">
+                  <button className="inline-flex items-center justify-center gap-2.5 px-7 py-3 rounded-md bg-gradient-to-r from-champagne via-champagne-light to-champagne text-charcoal font-serif tracking-wider uppercase text-xs font-semibold shadow-gold-glow hover:brightness-105 active:scale-98 transition-all cursor-pointer">
                     <span>{activeOffer.ctaText}</span>
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -262,30 +405,30 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
 
             </div>
 
-            {/* Desktop Side Navigation Arrows - Positioned with safe clearance outside the text column */}
+            {/* Desktop Side Navigation Arrows */}
             <button
               onClick={() => setCurrentSlide((prev) => (prev === 0 ? OFFERS.length - 1 : prev - 1))}
-              className="hidden sm:flex absolute left-4 sm:left-6 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-ivory hover:text-champagne border border-champagne/50 items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-xl hover:scale-105"
+              className="absolute left-6 lg:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-ivory hover:text-champagne border border-champagne/50 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-xl hover:scale-105"
               aria-label="Previous Offer"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={() => setCurrentSlide((prev) => (prev + 1) % OFFERS.length)}
-              className="hidden sm:flex absolute right-4 sm:right-6 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-ivory hover:text-champagne border border-champagne/50 items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-xl hover:scale-105"
+              className="absolute right-6 lg:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-ivory hover:text-champagne border border-champagne/50 flex items-center justify-center backdrop-blur-md transition-all cursor-pointer shadow-xl hover:scale-105"
               aria-label="Next Offer"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
 
-            {/* Slide Indicator Dots & Unified Navigation Pill */}
-            <div className="absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2 sm:gap-3 bg-black/60 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-md border border-champagne/30 shadow-xl">
+            {/* Desktop Slide Indicator Dots */}
+            <div className="absolute bottom-5 left-1/2 -translate-x-1/2 z-30 flex items-center gap-3 bg-black/60 px-4 py-2 rounded-full backdrop-blur-md border border-champagne/30 shadow-xl">
               <button
                 onClick={() => setCurrentSlide((prev) => (prev === 0 ? OFFERS.length - 1 : prev - 1))}
-                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-ivory/80 hover:text-champagne hover:bg-white/10 transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-ivory/80 hover:text-champagne hover:bg-white/10 transition-colors cursor-pointer"
                 aria-label="Previous Offer"
               >
-                <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                <ChevronLeft className="w-5 h-5" />
               </button>
 
               <div className="flex items-center gap-2">
@@ -294,7 +437,7 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
                     className={`h-2 rounded-full transition-all cursor-pointer ${
-                      currentSlide === idx ? 'w-8 sm:w-9 bg-champagne shadow-gold-glow' : 'w-2 sm:w-2.5 bg-ivory/40 hover:bg-ivory/70'
+                      currentSlide === idx ? 'w-9 bg-champagne shadow-gold-glow' : 'w-2.5 bg-ivory/40 hover:bg-ivory/70'
                     }`}
                     aria-label={`Go to slide ${idx + 1}`}
                   />
@@ -303,13 +446,12 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
 
               <button
                 onClick={() => setCurrentSlide((prev) => (prev + 1) % OFFERS.length)}
-                className="w-7 h-7 sm:w-8 sm:h-8 rounded-full flex items-center justify-center text-ivory/80 hover:text-champagne hover:bg-white/10 transition-colors cursor-pointer"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-ivory/80 hover:text-champagne hover:bg-white/10 transition-colors cursor-pointer"
                 aria-label="Next Offer"
               >
-                <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                <ChevronRight className="w-5 h-5" />
               </button>
             </div>
-
           </div>
 
         </div>
