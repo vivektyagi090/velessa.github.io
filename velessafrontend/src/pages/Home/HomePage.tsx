@@ -5,6 +5,7 @@ import { Product } from '../../types/product';
 import { productService } from '../../services/productService';
 import { HeroSection } from '../../components/home/HeroSection';
 import { MarketingOffersSection } from '../../components/home/MarketingOffersSection';
+import { CategoryQuickStrip } from '../../components/home/CategoryQuickStrip';
 import { FeaturedCategories } from '../../components/home/FeaturedCategories';
 import { BrandStorySection } from '../../components/home/BrandStorySection';
 import { EditorialBanner } from '../../components/home/EditorialBanner';
@@ -53,6 +54,9 @@ export const HomePage: React.FC = () => {
 
       {/* 2. Primary Marketing Offers & Hero Showcase Banner */}
       <MarketingOffersSection isTopHero={true} />
+
+      {/* 3. Quick Category Explorer Carousel Strip */}
+      <CategoryQuickStrip />
 
       {/* 3. Featured Categories */}
       <FeaturedCategories />
