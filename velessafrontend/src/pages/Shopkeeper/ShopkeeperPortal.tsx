@@ -951,143 +951,150 @@ export const ShopkeeperPortal: React.FC = () => {
 
   // 2. AUTHENTICATED: Render Full Shopkeeper & Order Fulfillment Portal
   return (
-    <div className="min-h-screen bg-ivory text-charcoal font-sans pb-24">
+    <div className="min-h-screen bg-ivory text-charcoal font-sans pb-24 w-full max-w-full overflow-x-hidden">
       {/* Streamlined Top Navigation Bar */}
-      <nav className="bg-stone-950 text-ivory border-b border-champagne/20 py-3 px-4 sm:px-8 flex items-center justify-between sticky top-0 z-30 shadow-xs">
-        <div className="flex items-center gap-3 sm:gap-5">
-          <Link to="/" className="flex items-center gap-2 group">
-            <span className="font-serif text-xl sm:text-2xl tracking-[0.22em] font-light text-ivory group-hover:text-champagne transition-colors">
-              VELESSA
-            </span>
-            <span className="text-[10px] uppercase tracking-wider text-champagne font-semibold border-l border-champagne/30 pl-2">
-              Shopkeeper
-            </span>
-          </Link>
+      <nav className="bg-stone-950 text-ivory border-b border-champagne/20 py-2.5 sm:py-3 px-3 sm:px-6 lg:px-8 sticky top-0 z-30 shadow-md w-full max-w-full">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 w-full min-w-0">
+          {/* Brand & Boutique Identifier */}
+          <div className="flex items-center gap-2 sm:gap-4 shrink-0">
+            <Link to="/" className="flex items-center gap-1.5 sm:gap-2 group">
+              <span className="font-serif text-lg sm:text-2xl tracking-[0.16em] sm:tracking-[0.22em] font-light text-ivory group-hover:text-champagne transition-colors">
+                VELESSA
+              </span>
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-champagne font-semibold border-l border-champagne/30 pl-1.5 sm:pl-2">
+                Desk
+              </span>
+            </Link>
 
-          <div className="hidden md:flex items-center gap-1.5 text-xs text-ivory/70 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <MapPin className="w-3.5 h-3.5 text-champagne" />
-            <span>{session.store}</span>
-          </div>
-        </div>
-
-        <div className="flex items-center gap-2.5 sm:gap-3.5 text-xs">
-          <Link
-            to="/shop"
-            className="text-ivory/70 hover:text-champagne flex items-center gap-1.5 px-2.5 py-1.5 rounded-sm hover:bg-white/5 transition-colors font-medium"
-            title="Open customer storefront in shop"
-          >
-            <Eye className="w-3.5 h-3.5 text-champagne" />
-            <span className="hidden sm:inline">View Store</span>
-          </Link>
-
-          <Button
-            variant="primary"
-            size="sm"
-            onClick={() => {
-              setEditingProduct(null);
-              setIsNewProductOpen(true);
-            }}
-            className="flex items-center gap-1.5 shadow-luxury text-xs py-1.5 px-3"
-          >
-            <Plus className="w-3.5 h-3.5 text-charcoal" />
-            <span className="font-semibold">+ Add Product</span>
-          </Button>
-
-          <div className="h-4 w-px bg-white/20 mx-1 hidden sm:block" />
-
-          {/* Staff Profile Trigger */}
-          <button
-            type="button"
-            onClick={() => setIsProfileModalOpen(true)}
-            className="flex items-center gap-2 px-2.5 py-1.5 rounded-sm hover:bg-white/10 text-champagne transition-colors cursor-pointer group"
-            title="View staff profile & credentials"
-          >
-            <div className="w-6 h-6 rounded-full bg-champagne/20 border border-champagne/40 text-champagne text-[11px] font-bold flex items-center justify-center group-hover:scale-105 transition-transform">
-              {session.name ? session.name.charAt(0).toUpperCase() : 'S'}
+            <div className="hidden lg:flex items-center gap-1.5 text-xs text-ivory/70 bg-white/5 border border-white/10 px-3 py-1 rounded-full">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <MapPin className="w-3.5 h-3.5 text-champagne" />
+              <span className="truncate max-w-[200px]">{session.store}</span>
             </div>
-            <span className="hidden lg:inline font-medium text-ivory group-hover:text-champagne transition-colors">
-              {session.name}
-            </span>
-          </button>
+          </div>
 
-          {/* Log Out */}
-          <button
-            type="button"
-            onClick={handleLockTerminal}
-            className="text-rose-400 hover:text-rose-300 hover:bg-rose-950/40 px-2.5 py-1.5 rounded-sm flex items-center gap-1.5 transition-colors cursor-pointer text-xs"
-            title="Log out of shopkeeper desk"
-          >
-            <Lock className="w-3.5 h-3.5 text-rose-400" />
-            <span className="hidden sm:inline">Log Out</span>
-          </button>
+          {/* Quick Actions */}
+          <div className="flex items-center gap-1.5 sm:gap-2.5 text-xs shrink-0">
+            {/* View Customer Storefront */}
+            <Link
+              to="/shop"
+              className="text-ivory/70 hover:text-champagne flex items-center gap-1 p-1.5 sm:px-2.5 sm:py-1.5 rounded-sm hover:bg-white/5 transition-colors font-medium"
+              title="Open customer storefront in shop"
+            >
+              <Eye className="w-4 h-4 text-champagne shrink-0" />
+              <span className="hidden md:inline">Storefront</span>
+            </Link>
+
+            {/* Add Product Button */}
+            <button
+              onClick={() => {
+                setEditingProduct(null);
+                setIsNewProductOpen(true);
+              }}
+              className="inline-flex items-center gap-1 sm:gap-1.5 bg-gradient-to-r from-champagne via-champagne-light to-champagne text-charcoal font-sans text-xs font-semibold py-1.5 px-2.5 sm:px-3.5 rounded-sm shadow-gold-glow hover:brightness-105 active:scale-95 transition-all cursor-pointer shrink-0"
+              title="Add new jewellery piece to boutique"
+            >
+              <Plus className="w-3.5 h-3.5 text-charcoal stroke-[2.5]" />
+              <span className="hidden sm:inline">+ Add Product</span>
+              <span className="sm:hidden font-medium">Add</span>
+            </button>
+
+            <div className="h-4 w-px bg-white/20 mx-0.5 sm:mx-1 hidden sm:block" />
+
+            {/* Staff Profile Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsProfileModalOpen(true)}
+              className="flex items-center gap-1.5 p-1 sm:px-2 sm:py-1 rounded-sm hover:bg-white/10 text-champagne transition-colors cursor-pointer shrink-0"
+              title="View staff profile & credentials"
+            >
+              <div className="w-6 h-6 rounded-full bg-champagne/20 border border-champagne/40 text-champagne text-[11px] font-bold flex items-center justify-center">
+                {session.name ? session.name.charAt(0).toUpperCase() : 'S'}
+              </div>
+              <span className="hidden xl:inline font-medium text-ivory">
+                {session.name}
+              </span>
+            </button>
+
+            {/* Log Out */}
+            <button
+              type="button"
+              onClick={handleLockTerminal}
+              className="text-rose-400 hover:text-rose-300 hover:bg-rose-950/40 p-1.5 sm:px-2.5 sm:py-1.5 rounded-sm flex items-center gap-1 transition-colors cursor-pointer text-xs shrink-0"
+              title="Log out of shopkeeper desk"
+            >
+              <Lock className="w-3.5 h-3.5 text-rose-400" />
+              <span className="hidden md:inline">Log Out</span>
+            </button>
+          </div>
         </div>
       </nav>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 space-y-6">
+      <div className="w-full max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pt-4 sm:pt-6 space-y-4 sm:space-y-6 min-w-0">
         {/* Clean Page Title Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-beige">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 pb-3 border-b border-beige">
           <div>
-            <h1 className="font-serif text-2xl sm:text-3xl text-charcoal font-light tracking-wide">
+            <h1 className="font-serif text-xl sm:text-3xl text-charcoal font-light tracking-wide">
               Store Inventory &amp; Orders
             </h1>
-            <p className="text-xs text-charcoal-muted mt-0.5">
-              Manage jewellery designs, stock levels, barcode tags, and customer shipments.
+            <p className="text-[11px] sm:text-xs text-charcoal-muted mt-0.5">
+              Manage jewellery designs, stock levels, barcode tags, and shipments.
             </p>
           </div>
         </div>
+
         {/* Real-Time Metrics Row */}
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
-          <div className="bg-white border border-beige p-4 rounded-sm shadow-xs space-y-1">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4 w-full min-w-0">
+          <div className="bg-white border border-beige p-3 sm:p-4 rounded-sm shadow-xs space-y-0.5 sm:space-y-1 min-w-0 overflow-hidden">
             <div className="flex justify-between items-center text-charcoal-muted">
-              <span className="text-[10px] uppercase font-bold tracking-wider">Product Catalog</span>
-              <Package className="w-4 h-4 text-champagne" />
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider truncate">Product Catalog</span>
+              <Package className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-champagne shrink-0" />
             </div>
-            <div className="font-serif text-2xl font-bold text-charcoal">{totalItems}</div>
-            <div className="text-[10px] text-charcoal-muted">Active Designs</div>
+            <div className="font-serif text-xl sm:text-2xl font-bold text-charcoal truncate">{totalItems}</div>
+            <div className="text-[9px] sm:text-[10px] text-charcoal-muted truncate">Active Designs</div>
           </div>
 
-          <div className="bg-white border border-beige p-4 rounded-sm shadow-xs space-y-1">
+          <div className="bg-white border border-beige p-3 sm:p-4 rounded-sm shadow-xs space-y-0.5 sm:space-y-1 min-w-0 overflow-hidden">
             <div className="flex justify-between items-center text-charcoal-muted">
-              <span className="text-[10px] uppercase font-bold tracking-wider">Total Pieces</span>
-              <Building className="w-4 h-4 text-champagne" />
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider truncate">Total Pieces</span>
+              <Building className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-champagne shrink-0" />
             </div>
-            <div className="font-serif text-2xl font-bold text-charcoal">{totalStockUnits}</div>
-            <div className="text-[10px] text-emerald-700 font-medium">In-Stock Units</div>
+            <div className="font-serif text-xl sm:text-2xl font-bold text-charcoal truncate">{totalStockUnits}</div>
+            <div className="text-[9px] sm:text-[10px] text-emerald-700 font-medium truncate">In-Stock Units</div>
           </div>
 
-          <div className="bg-white border border-beige p-4 rounded-sm shadow-xs space-y-1">
+          <div className="bg-white border border-beige p-3 sm:p-4 rounded-sm shadow-xs space-y-0.5 sm:space-y-1 min-w-0 overflow-hidden">
             <div className="flex justify-between items-center text-charcoal-muted">
-              <span className="text-[10px] uppercase font-bold tracking-wider">Low Stock</span>
-              <AlertTriangle className="w-4 h-4 text-amber-600" />
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider truncate">Low Stock</span>
+              <AlertTriangle className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 shrink-0" />
             </div>
-            <div className="font-serif text-2xl font-bold text-amber-700">{lowStockCount}</div>
-            <div className="text-[10px] text-amber-700 font-medium">≤ 2 units remaining</div>
+            <div className="font-serif text-xl sm:text-2xl font-bold text-amber-700 truncate">{lowStockCount}</div>
+            <div className="text-[9px] sm:text-[10px] text-amber-700 font-medium truncate">≤ 2 units remaining</div>
           </div>
 
-          <div className="bg-white border border-beige p-4 rounded-sm shadow-xs space-y-1">
+          <div className="bg-white border border-beige p-3 sm:p-4 rounded-sm shadow-xs space-y-0.5 sm:space-y-1 min-w-0 overflow-hidden">
             <div className="flex justify-between items-center text-charcoal-muted">
-              <span className="text-[10px] uppercase font-bold tracking-wider">Total Stock Value</span>
-              <Coins className="w-4 h-4 text-champagne" />
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider truncate">Total Stock Value</span>
+              <Coins className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-champagne shrink-0" />
             </div>
-            <div className="font-serif text-xl sm:text-2xl font-bold text-charcoal truncate">
+            <div className="font-serif text-lg sm:text-2xl font-bold text-charcoal truncate">
               {formatPrice(totalValuation)}
             </div>
-            <div className="text-[10px] text-charcoal-muted">Retail Worth (MRP)</div>
+            <div className="text-[9px] sm:text-[10px] text-charcoal-muted truncate">Retail Worth (MRP)</div>
           </div>
 
-          <div className="bg-white border border-beige p-4 rounded-sm shadow-xs space-y-1 col-span-2 lg:col-span-1">
+          <div className="bg-white border border-beige p-3 sm:p-4 rounded-sm shadow-xs space-y-0.5 sm:space-y-1 col-span-2 sm:col-span-1 min-w-0 overflow-hidden">
             <div className="flex justify-between items-center text-charcoal-muted">
-              <span className="text-[10px] uppercase font-bold tracking-wider">Pending Orders</span>
-              <Truck className="w-4 h-4 text-champagne" />
+              <span className="text-[9px] sm:text-[10px] uppercase font-bold tracking-wider truncate">Pending Orders</span>
+              <Truck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-champagne shrink-0" />
             </div>
-            <div className="font-serif text-2xl font-bold text-emerald-800">{pendingOrders}</div>
-            <div className="text-[10px] text-emerald-700 font-medium">To Pack &amp; Ship</div>
+            <div className="font-serif text-xl sm:text-2xl font-bold text-emerald-800 truncate">{pendingOrders}</div>
+            <div className="text-[9px] sm:text-[10px] text-emerald-700 font-medium truncate">To Pack &amp; Ship</div>
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <div className="border-b border-beige flex items-center gap-1 sm:gap-2 overflow-x-auto text-xs font-sans">
+        <div className="border-b border-beige flex items-center gap-1 sm:gap-2 overflow-x-auto text-xs font-sans pb-px scrollbar-none">
           <button
             onClick={() => setActiveTab('inventory')}
             className={`flex items-center gap-2 py-3 px-4 border-b-2 font-medium transition-all whitespace-nowrap cursor-pointer ${
@@ -1149,7 +1156,7 @@ export const ShopkeeperPortal: React.FC = () => {
         {activeTab === 'inventory' && (
           <div className="space-y-4">
             {/* Search & Filter Bar */}
-            <div className="bg-white p-4 rounded-sm border border-beige shadow-xs flex flex-col md:flex-row items-center justify-between gap-3">
+            <div className="bg-white p-3.5 sm:p-4 rounded-sm border border-beige shadow-xs flex flex-col md:flex-row items-stretch md:items-center justify-between gap-3">
               <div className="relative w-full md:w-80">
                 <Search className="w-4 h-4 text-charcoal-muted absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
@@ -1165,7 +1172,7 @@ export const ShopkeeperPortal: React.FC = () => {
                 <select
                   value={selectedCategory}
                   onChange={(e) => setSelectedCategory(e.target.value)}
-                  className="p-2 bg-beige/15 border border-beige rounded-xs text-xs outline-none focus:border-champagne"
+                  className="flex-1 sm:flex-initial p-2 bg-beige/15 border border-beige rounded-xs text-xs outline-none focus:border-champagne min-w-[120px]"
                 >
                   <option value="All">All Categories</option>
                   <option value="1 Gram Gold Forming">1 Gram Gold Forming</option>
@@ -1176,30 +1183,30 @@ export const ShopkeeperPortal: React.FC = () => {
                   <option value="Rings">Rings</option>
                 </select>
 
-                <div className="flex items-center border border-beige rounded-xs overflow-hidden text-xs">
+                <div className="flex items-center border border-beige rounded-xs overflow-hidden text-[11px] sm:text-xs">
                   <button
                     onClick={() => setFilterStock('all')}
-                    className={`px-3 py-1.5 ${filterStock === 'all' ? 'bg-charcoal text-ivory' : 'bg-white text-charcoal hover:bg-beige/20'}`}
+                    className={`px-2.5 sm:px-3 py-1.5 ${filterStock === 'all' ? 'bg-charcoal text-ivory font-medium' : 'bg-white text-charcoal hover:bg-beige/20'}`}
                   >
                     All
                   </button>
                   <button
                     onClick={() => setFilterStock('low')}
-                    className={`px-3 py-1.5 ${filterStock === 'low' ? 'bg-amber-600 text-white' : 'bg-white text-charcoal hover:bg-beige/20'}`}
+                    className={`px-2.5 sm:px-3 py-1.5 ${filterStock === 'low' ? 'bg-amber-600 text-white font-medium' : 'bg-white text-charcoal hover:bg-beige/20'}`}
                   >
-                    Low Stock (≤2)
+                    Low (≤2)
                   </button>
                   <button
                     onClick={() => setFilterStock('out')}
-                    className={`px-3 py-1.5 ${filterStock === 'out' ? 'bg-rose-700 text-white' : 'bg-white text-charcoal hover:bg-beige/20'}`}
+                    className={`px-2.5 sm:px-3 py-1.5 ${filterStock === 'out' ? 'bg-rose-700 text-white font-medium' : 'bg-white text-charcoal hover:bg-beige/20'}`}
                   >
-                    Out of Stock
+                    Out
                   </button>
                 </div>
 
                 <button
                   onClick={() => fetchProducts(true)}
-                  className="p-2 bg-beige/20 hover:bg-beige/40 border border-beige rounded-xs text-charcoal transition-colors"
+                  className="p-2 bg-beige/20 hover:bg-beige/40 border border-beige rounded-xs text-charcoal transition-colors ml-auto sm:ml-0"
                   title="Refresh Inventory"
                 >
                   <RefreshCw className={`w-4 h-4 ${isLoadingProducts ? 'animate-spin' : ''}`} />
@@ -1207,9 +1214,140 @@ export const ShopkeeperPortal: React.FC = () => {
               </div>
             </div>
 
-            {/* Inventory Table */}
-            <div className="bg-white border border-beige rounded-sm shadow-xs overflow-x-auto">
-              <table className="w-full text-left text-xs border-collapse">
+            {/* Mobile Inventory Cards View */}
+            <div className="block md:hidden space-y-3">
+              {filteredProducts.map((p) => {
+                const stock = p.stockQuantity ?? 10;
+                return (
+                  <div
+                    key={p.id}
+                    className="bg-white border border-beige rounded-sm p-3.5 shadow-2xs space-y-3 min-w-0"
+                  >
+                    <div className="flex gap-3 min-w-0">
+                      <img
+                        src={p.images[0]}
+                        alt={p.name}
+                        className="w-16 h-16 rounded-xs object-cover border border-beige bg-beige/30 shrink-0"
+                      />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center justify-between gap-1">
+                          <span className="font-mono font-bold text-[10px] text-champagne-dark">
+                            {p.sku || `VLSA-${p.id}`}
+                          </span>
+                          {stock === 0 ? (
+                            <span className="px-1.5 py-0.5 rounded-full bg-rose-50 text-rose-700 font-semibold text-[9px] shrink-0">
+                              Out of Stock
+                            </span>
+                          ) : stock <= 2 ? (
+                            <span className="px-1.5 py-0.5 rounded-full bg-amber-50 text-amber-700 font-semibold text-[9px] shrink-0">
+                              Low Stock ({stock})
+                            </span>
+                          ) : (
+                            <span className="px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 font-semibold text-[9px] shrink-0">
+                              Live ({stock})
+                            </span>
+                          )}
+                        </div>
+
+                        <Link
+                          to={`/product/${p.slug}`}
+                          target="_blank"
+                          className="font-serif text-sm font-medium text-charcoal hover:text-champagne transition-colors truncate block mt-0.5"
+                        >
+                          {p.name}
+                        </Link>
+
+                        <div className="flex items-baseline gap-2 mt-1">
+                          <span className="font-mono font-bold text-sm text-charcoal">
+                            {formatPrice(p.price)}
+                          </span>
+                          {p.originalPrice && p.originalPrice > p.price && (
+                            <span className="text-[10px] text-charcoal-muted line-through font-mono">
+                              MRP {formatPrice(p.originalPrice)}
+                            </span>
+                          )}
+                        </div>
+
+                        <div className="text-[10px] text-charcoal-muted mt-0.5 truncate">
+                          {p.category} • Wt: {p.grossWeightGrams || 18.5}g
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Quick Stock Controls & Actions */}
+                    <div className="pt-2 border-t border-beige/60 flex items-center justify-between gap-2">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-[11px] text-charcoal-muted">Stock:</span>
+                        <div className="inline-flex items-center gap-1 border border-beige rounded-xs p-0.5 bg-beige/10">
+                          <button
+                            type="button"
+                            onClick={() => handleStockAdjust(p, -1)}
+                            className="w-6 h-6 rounded-xs bg-white hover:bg-beige/40 text-charcoal font-bold flex items-center justify-center cursor-pointer text-xs active:bg-beige/60"
+                            title="Decrease stock by 1"
+                          >
+                            -
+                          </button>
+                          <span className="w-7 font-mono font-bold text-xs text-charcoal text-center">
+                            {stock}
+                          </span>
+                          <button
+                            type="button"
+                            onClick={() => handleStockAdjust(p, 1)}
+                            className="w-6 h-6 rounded-xs bg-white hover:bg-beige/40 text-charcoal font-bold flex items-center justify-center cursor-pointer text-xs active:bg-beige/60"
+                            title="Increase stock by 1"
+                          >
+                            +
+                          </button>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-1.5">
+                        <button
+                          type="button"
+                          onClick={() => setTagModalProduct(p)}
+                          className="px-2 py-1.5 bg-white hover:bg-beige/40 border border-beige text-charcoal rounded-xs text-xs font-medium flex items-center gap-1 transition-colors cursor-pointer"
+                          title="Print Barcode Price Tag"
+                        >
+                          <Tag className="w-3.5 h-3.5 text-champagne" />
+                          <span className="text-[11px]">Tag</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setEditingProduct(p);
+                            setIsNewProductOpen(true);
+                          }}
+                          className="p-1.5 bg-white hover:bg-beige/40 border border-beige text-charcoal rounded-xs transition-colors cursor-pointer"
+                          title="Edit Piece Specifications"
+                        >
+                          <Edit2 className="w-3.5 h-3.5" />
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => handleDeleteProduct(p)}
+                          className="p-1.5 bg-rose-50 hover:bg-rose-100 border border-rose-200 text-rose-600 rounded-xs transition-colors cursor-pointer"
+                          title="Deactivate from catalog"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+
+              {filteredProducts.length === 0 && (
+                <div className="text-center py-10 bg-white border border-beige rounded-sm text-charcoal-muted text-xs">
+                  No jewellery items match your search.
+                </div>
+              )}
+            </div>
+
+            {/* Desktop Inventory Table */}
+            <div className="hidden md:block bg-white border border-beige rounded-sm shadow-xs overflow-x-auto">
+              <table className="w-full min-w-[760px] text-left text-xs border-collapse">
                 <thead>
                   <tr className="border-b border-beige bg-beige/20 text-[10px] uppercase font-bold text-charcoal-muted tracking-wider">
                     <th className="py-3 px-4">Jewellery Item</th>
@@ -1360,51 +1498,51 @@ export const ShopkeeperPortal: React.FC = () => {
 
         {/* TAB 2: BARCODE & PRICE TAG STUDIO */}
         {activeTab === 'tags' && (
-          <div className="bg-white p-6 rounded-sm border border-beige shadow-xs space-y-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div className="bg-white p-4 sm:p-6 rounded-sm border border-beige shadow-xs space-y-4 sm:space-y-6">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4">
               <div>
-                <h3 className="font-serif text-2xl text-charcoal font-normal">
+                <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-normal">
                   Jewellery Tag &amp; Barcode Print Studio
                 </h3>
-                <p className="text-xs text-charcoal-muted">
+                <p className="text-[11px] sm:text-xs text-charcoal-muted mt-0.5">
                   Generate adhesive thermal butterfly/dumbbell tags (50mm × 25mm) with SKU barcode, gross weight, net weight, and MRP.
                 </p>
               </div>
 
               {/* Tag Studio Search */}
-              <div className="flex items-center gap-3">
-                <div className="relative">
+              <div className="flex items-center gap-3 w-full sm:w-auto">
+                <div className="relative w-full sm:w-64">
                   <Search className="w-4 h-4 text-charcoal-muted absolute left-3 top-1/2 -translate-y-1/2" />
                   <input
                     type="text"
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     placeholder="Search by piece name or SKU..."
-                    className="pl-9 pr-3 py-1.5 text-xs bg-beige/15 border border-beige rounded-xs outline-none focus:border-champagne w-64"
+                    className="w-full pl-9 pr-3 py-1.5 text-xs bg-beige/15 border border-beige rounded-xs outline-none focus:border-champagne"
                   />
                 </div>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
               {filteredProducts.map((p) => (
                 <div
                   key={p.id}
-                  className="p-4 border border-beige hover:border-champagne rounded-sm bg-beige/10 transition-colors flex items-center justify-between gap-3 shadow-2xs hover:shadow-xs"
+                  className="p-3 sm:p-4 border border-beige hover:border-champagne rounded-sm bg-beige/10 transition-colors flex items-center justify-between gap-3 shadow-2xs hover:shadow-xs min-w-0"
                 >
-                  <div className="flex items-center gap-3 min-w-0">
+                  <div className="flex items-center gap-3 min-w-0 flex-1">
                     <img
                       src={p.images[0]}
                       alt={p.name}
-                      className="w-14 h-14 rounded-xs object-cover border border-beige shrink-0"
+                      className="w-13 h-13 sm:w-14 sm:h-14 rounded-xs object-cover border border-beige shrink-0"
                     />
-                    <div className="min-w-0">
+                    <div className="min-w-0 flex-1">
                       <div className="font-mono font-bold text-[10px] text-champagne-dark">{p.sku || `VLSA-${p.id}`}</div>
-                      <div className="font-serif text-sm text-charcoal font-medium truncate" title={p.name}>
+                      <div className="font-serif text-xs sm:text-sm text-charcoal font-medium truncate" title={p.name}>
                         {p.name}
                       </div>
                       <div className="font-mono font-bold text-xs text-charcoal">{formatPrice(p.price)}</div>
-                      <div className="text-[10px] text-charcoal-muted">
+                      <div className="text-[10px] text-charcoal-muted truncate">
                         Wt: {p.grossWeightGrams || 18.5}g • {p.category}
                       </div>
                     </div>
@@ -1413,7 +1551,7 @@ export const ShopkeeperPortal: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setTagModalProduct(p)}
-                    className="flex items-center gap-1.5 px-3 py-2 bg-white hover:bg-beige/40 border border-beige text-charcoal hover:text-champagne font-medium rounded-xs text-xs shrink-0 transition-colors cursor-pointer shadow-2xs"
+                    className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 bg-white hover:bg-beige/40 border border-beige text-charcoal hover:text-champagne font-medium rounded-xs text-xs shrink-0 transition-colors cursor-pointer shadow-2xs"
                     title={`Generate Tag for ${p.name}`}
                   >
                     <Tag className="w-3.5 h-3.5 text-champagne" />
@@ -1433,12 +1571,12 @@ export const ShopkeeperPortal: React.FC = () => {
         {/* TAB 3: ORDER FULFILLMENT & BILL PRINT DESK */}
         {activeTab === 'orders' && (
           <div className="space-y-4">
-            <div className="bg-white p-5 rounded-sm border border-beige shadow-xs flex flex-wrap items-center justify-between gap-3">
+            <div className="bg-white p-4 sm:p-5 rounded-sm border border-beige shadow-xs flex flex-wrap items-center justify-between gap-3">
               <div>
-                <h3 className="font-serif text-2xl text-charcoal font-normal">
+                <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-normal">
                   Order Fulfillment Desk ({orders.length})
                 </h3>
-                <p className="text-xs text-charcoal-muted">
+                <p className="text-[11px] sm:text-xs text-charcoal-muted mt-0.5">
                   Generate customer Tax Invoices (GST Bills), Pick &amp; Pack Slips, and 4x6 Courier Labels.
                 </p>
               </div>
@@ -1456,16 +1594,16 @@ export const ShopkeeperPortal: React.FC = () => {
               {orders.map((order) => (
                 <div
                   key={order.id}
-                  className="bg-white p-5 sm:p-6 rounded-sm border border-beige hover:border-champagne/70 transition-all shadow-xs space-y-4"
+                  className="bg-white p-4 sm:p-6 rounded-sm border border-beige hover:border-champagne/70 transition-all shadow-xs space-y-4 min-w-0"
                 >
                   {/* Order Card Top */}
                   <div className="flex flex-wrap items-center justify-between gap-3 pb-3 border-b border-beige">
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 sm:gap-3">
                       <div className="font-mono font-bold text-sm text-charcoal">
                         #{order.orderNumber}
                       </div>
                       <span className="text-xs text-charcoal-muted">•</span>
-                      <div className="text-xs text-charcoal-muted">
+                      <div className="text-[11px] sm:text-xs text-charcoal-muted">
                         {new Date(order.createdAt).toLocaleDateString('en-IN', {
                           day: 'numeric',
                           month: 'short',
@@ -1532,11 +1670,11 @@ export const ShopkeeperPortal: React.FC = () => {
                   </div>
 
                   {/* Action Buttons: Bill, Packing Slip, Shipping Label */}
-                  <div className="pt-3 border-t border-beige flex flex-wrap items-center justify-end gap-2.5">
+                  <div className="pt-3 border-t border-beige flex flex-col sm:flex-row sm:flex-wrap items-stretch sm:items-center justify-end gap-2 sm:gap-2.5">
                     <button
                       type="button"
                       onClick={() => setInvoiceModalOrder(order)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-beige/30 border border-beige text-charcoal text-xs font-medium rounded-xs transition-colors cursor-pointer"
+                      className="w-full sm:w-auto justify-center inline-flex items-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white hover:bg-beige/30 border border-beige text-charcoal text-xs font-medium rounded-xs transition-colors cursor-pointer"
                     >
                       <FileText className="w-3.5 h-3.5 text-champagne" />
                       <span>Print GST Tax Bill</span>
@@ -1545,7 +1683,7 @@ export const ShopkeeperPortal: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setPackingSlipOrder(order)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-beige/30 border border-beige text-charcoal text-xs font-medium rounded-xs transition-colors cursor-pointer"
+                      className="w-full sm:w-auto justify-center inline-flex items-center gap-1.5 px-3 py-2 sm:py-1.5 bg-white hover:bg-beige/30 border border-beige text-charcoal text-xs font-medium rounded-xs transition-colors cursor-pointer"
                     >
                       <Package className="w-3.5 h-3.5 text-champagne" />
                       <span>Print Packing Slip</span>
@@ -1554,7 +1692,7 @@ export const ShopkeeperPortal: React.FC = () => {
                     <button
                       type="button"
                       onClick={() => setShippingLabelOrder(order)}
-                      className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-charcoal hover:bg-black text-ivory text-xs font-medium rounded-xs transition-colors cursor-pointer"
+                      className="w-full sm:w-auto justify-center inline-flex items-center gap-1.5 px-3 py-2 sm:py-1.5 bg-charcoal hover:bg-black text-ivory text-xs font-medium rounded-xs transition-colors cursor-pointer"
                     >
                       <Truck className="w-3.5 h-3.5 text-champagne" />
                       <span>Print 4×6″ Shipping Label</span>
@@ -1568,17 +1706,17 @@ export const ShopkeeperPortal: React.FC = () => {
 
         {/* TAB 4: DISPATCH & COURIER SHIPPING */}
         {activeTab === 'dispatch' && (
-          <div className="bg-white p-6 rounded-sm border border-beige shadow-xs space-y-6">
+          <div className="bg-white p-4 sm:p-6 rounded-sm border border-beige shadow-xs space-y-4 sm:space-y-6">
             <div>
-              <h3 className="font-serif text-2xl text-charcoal font-normal">
+              <h3 className="font-serif text-xl sm:text-2xl text-charcoal font-normal">
                 Courier Dispatch &amp; Handover Desk
               </h3>
-              <p className="text-xs text-charcoal-muted">
+              <p className="text-[11px] sm:text-xs text-charcoal-muted mt-0.5">
                 BlueDart Express Air Priority partner dispatch center • Print shipping labels and handover manifests.
               </p>
             </div>
 
-            <div className="p-4 bg-beige/10 rounded-sm border border-beige flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+            <div className="p-4 bg-beige/10 rounded-sm border border-beige flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3">
               <div>
                 <span className="text-[10px] uppercase font-bold text-champagne tracking-wider block">
                   Logistics Partner Active
@@ -1590,7 +1728,7 @@ export const ShopkeeperPortal: React.FC = () => {
               <button
                 type="button"
                 onClick={() => window.print()}
-                className="flex items-center gap-2 px-4 py-2 bg-charcoal text-ivory text-xs font-semibold rounded-xs hover:bg-black transition-colors cursor-pointer"
+                className="w-full sm:w-auto justify-center flex items-center gap-2 px-4 py-2 bg-charcoal text-ivory text-xs font-semibold rounded-xs hover:bg-black transition-colors cursor-pointer"
               >
                 <Printer className="w-3.5 h-3.5 text-champagne" />
                 <span>Print Daily Handover Manifest</span>
@@ -1605,21 +1743,21 @@ export const ShopkeeperPortal: React.FC = () => {
               {orders.map((o) => (
                 <div
                   key={o.id}
-                  className="p-3.5 border border-beige rounded-sm bg-beige/5 flex flex-wrap items-center justify-between gap-3 text-xs"
+                  className="p-3.5 border border-beige rounded-sm bg-beige/5 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs min-w-0"
                 >
-                  <div className="space-y-0.5">
-                    <div className="font-mono font-bold text-charcoal">AWB: {o.trackingNumber || `BD-${o.orderNumber}99IN`}</div>
-                    <div className="text-charcoal-muted">
+                  <div className="space-y-0.5 min-w-0">
+                    <div className="font-mono font-bold text-charcoal truncate">AWB: {o.trackingNumber || `BD-${o.orderNumber}99IN`}</div>
+                    <div className="text-charcoal-muted text-[11px] sm:text-xs">
                       Order #{o.orderNumber} • Destination: {o.shippingAddress.city} • Collect: {formatPrice(o.summary.total)}
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2 w-full sm:w-auto shrink-0">
                     <Button
                       variant="outline"
                       size="sm"
                       onClick={() => setShippingLabelOrder(o)}
-                      className="flex items-center gap-1.5"
+                      className="w-full sm:w-auto justify-center flex items-center gap-1.5"
                     >
                       <Truck className="w-3.5 h-3.5 text-champagne" />
                       <span>Print Label</span>
