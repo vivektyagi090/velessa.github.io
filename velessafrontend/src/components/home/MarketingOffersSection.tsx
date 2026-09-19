@@ -128,11 +128,30 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
   const [currentSlide, setCurrentSlide] = useState(0);
   const [copiedCode, setCopiedCode] = useState<string | null>(null);
   const [isPaused, setIsPaused] = useState(false);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
   const [timeLeft, setTimeLeft] = useState({
     hours: 14,
     minutes: 38,
     seconds: 45,
   });
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStartX === null) return;
+    const touchEndX = e.changedTouches[0].clientX;
+    const diffX = touchStartX - touchEndX;
+    if (Math.abs(diffX) > 40) {
+      if (diffX > 0) {
+        setCurrentSlide((prev) => (prev + 1) % OFFERS.length);
+      } else {
+        setCurrentSlide((prev) => (prev === 0 ? OFFERS.length - 1 : prev - 1));
+      }
+    }
+    setTouchStartX(null);
+  };
 
   // Countdown timer simulation
   useEffect(() => {
@@ -188,12 +207,16 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
         {/* Main Hero Offer Showcase Card - Grand & Expansive */}
         <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl bg-charcoal border border-champagne/40 text-ivory">
           
-          {/* MOBILE LAYOUT (< md): Clean Split View - Clear Unobstructed Visual + Sleek Luxury Action Bar */}
-          <div className="block md:hidden">
-            {/* 1. Clear Unobstructed Jewellery Showcase (Tap to Open Offer) */}
+          {/* MOBILE LAYOUT (< md): Pure Full Visual Banner with Touch Swipe */}
+          <div 
+            className="block md:hidden relative w-full overflow-hidden"
+            onTouchStart={handleTouchStart}
+            onTouchEnd={handleTouchEnd}
+          >
+            {/* Pure Unobstructed Jewellery Showcase Banner (Tap to Open Offer) */}
             <Link 
               to={activeOffer.ctaLink} 
-              className="relative aspect-[16/11] w-full overflow-hidden bg-black/40 block group cursor-pointer"
+              className="relative aspect-[16/9] w-full overflow-hidden bg-black/40 block group cursor-pointer"
               title={`View ${activeOffer.title}`}
             >
               <img
@@ -201,112 +224,73 @@ export const MarketingOffersSection: React.FC<MarketingOffersSectionProps> = ({ 
                 alt={activeOffer.title}
                 loading="eager"
                 fetchPriority="high"
-                className="w-full h-full object-cover object-center group-hover:scale-105 transition-all duration-700 ease-out filter brightness-[1.02] contrast-[1.02]"
+                className="w-full h-full object-cover object-center group-hover:scale-102 transition-all duration-700 ease-out filter brightness-[1.02] contrast-[1.02]"
               />
 
-              {/* Floating Minimal Badges: Corner Pill Tags that don't cover the jewelry */}
-              <div className="absolute top-3 left-3 right-3 flex items-center justify-between pointer-events-none z-10">
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 border border-champagne/60 text-champagne text-[10px] uppercase tracking-wider font-sans font-medium backdrop-blur-md shadow-md">
-                  <Sparkles className="w-3 h-3 text-champagne" />
+              {/* Floating Minimal Badges: Corner Pill Tags */}
+              <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none z-10">
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/75 border border-champagne/60 text-champagne text-[10px] uppercase tracking-wider font-sans font-medium backdrop-blur-md shadow-md">
+                  <Sparkles className="w-2.5 h-2.5 text-champagne" />
                   <span>{activeOffer.discountBadge}</span>
                 </div>
 
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-black/75 border border-ivory/25 text-ivory text-[10px] font-mono backdrop-blur-md shadow-md">
-                  <Timer className="w-3.5 h-3.5 text-champagne animate-pulse" />
+                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-black/75 border border-ivory/25 text-ivory text-[10px] font-mono backdrop-blur-md shadow-md">
+                  <Timer className="w-3 h-3 text-champagne animate-pulse" />
                   <span className="text-champagne font-bold">
                     {String(timeLeft.hours).padStart(2, '0')}h : {String(timeLeft.minutes).padStart(2, '0')}m : {String(timeLeft.seconds).padStart(2, '0')}s
                   </span>
                 </div>
               </div>
 
-              {/* Soft Bottom Shadow Edge */}
-              <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-[#141312] via-[#141312]/50 to-transparent" />
+              {/* Soft Bottom Shadow Edge for Slide Indicators Contrast */}
+              <div className="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-black/75 via-black/35 to-transparent pointer-events-none" />
             </Link>
 
-            {/* 2. Refined, High-End Luxury Offer Panel */}
-            <div className="px-5 pt-3.5 pb-4 space-y-2.5 bg-[#141312] border-t border-champagne/20">
-              
-              {/* Header: Title & Highlight (Tap to Open) */}
-              <Link to={activeOffer.ctaLink} className="block group">
-                <div className="flex items-center justify-between">
-                  <span className="block text-[10px] uppercase tracking-[0.25em] text-champagne/90 font-sans font-medium">
-                    {activeOffer.title}
-                  </span>
-                  <span className="text-[10px] font-sans text-champagne/80 group-hover:text-champagne transition-colors flex items-center gap-0.5 font-medium">
-                    Shop Now <ChevronRight className="w-3 h-3 inline" />
-                  </span>
-                </div>
-                <h3 className="font-serif text-xl sm:text-2xl font-normal tracking-tight text-white mt-0.5 group-hover:brightness-110 transition-all">
-                  <span className="gold-gradient-text">{activeOffer.highlightText}</span>
-                </h3>
-              </Link>
+            {/* Floating Slide Indicator Dots & Arrows directly over banner */}
+            <div className="absolute bottom-2 inset-x-0 flex items-center justify-center gap-2 z-20 pointer-events-auto">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCurrentSlide((prev) => (prev === 0 ? OFFERS.length - 1 : prev - 1));
+                }}
+                className="w-6 h-6 rounded-full bg-black/65 backdrop-blur-md text-ivory/80 hover:text-champagne flex items-center justify-center border border-champagne/30 active:scale-95 transition-all cursor-pointer"
+                aria-label="Previous Offer"
+              >
+                <ChevronLeft className="w-3.5 h-3.5" />
+              </button>
 
-              {/* Perk highlight chip instead of chopped off text */}
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white/5 border border-champagne/30 text-champagne text-[11px] font-sans">
-                <span>{activeOffer.perk}</span>
-              </div>
-
-              {/* Action Area: Sleek Coupon Voucher + Explore CTA Button */}
-              <div className="pt-0.5 flex items-stretch gap-2.5">
-                {/* Coupon Code Voucher Chip */}
-                <div className="flex-1 inline-flex items-center justify-between px-3 py-2 rounded-lg bg-black/60 border border-dashed border-champagne/60 backdrop-blur-md">
-                  <div className="flex items-center gap-1.5">
-                    <Tag className="w-3.5 h-3.5 text-champagne shrink-0" />
-                    <span className="text-champagne font-mono font-bold text-xs tracking-wider">{activeOffer.couponCode}</span>
-                  </div>
+              <div className="flex items-center gap-1.5 bg-black/65 backdrop-blur-md px-2.5 py-1 rounded-full border border-champagne/30 shadow-md">
+                {OFFERS.map((_, idx) => (
                   <button
+                    key={idx}
+                    type="button"
                     onClick={(e) => {
                       e.preventDefault();
                       e.stopPropagation();
-                      handleCopyCode(activeOffer.couponCode);
+                      setCurrentSlide(idx);
                     }}
-                    className="text-[10px] font-sans px-2.5 py-0.5 rounded bg-champagne text-charcoal font-semibold hover:bg-champagne-light active:scale-95 transition-all cursor-pointer shadow-xs"
-                    title="Click to copy coupon code"
-                  >
-                    {copiedCode === activeOffer.couponCode ? 'COPIED!' : 'COPY'}
-                  </button>
-                </div>
-
-                {/* Claim Offer CTA Button */}
-                <Link to={activeOffer.ctaLink} className="flex-1">
-                  <button className="w-full h-full inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg bg-gradient-to-r from-champagne via-champagne-light to-champagne text-charcoal font-serif tracking-wider uppercase text-[11px] font-bold shadow-gold-glow hover:brightness-105 active:scale-98 transition-all cursor-pointer">
-                    <span>{activeOffer.ctaText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </Link>
+                    className={`h-1.5 rounded-full transition-all cursor-pointer ${
+                      currentSlide === idx ? 'w-5 bg-champagne shadow-gold-glow' : 'w-1.5 bg-ivory/40'
+                    }`}
+                    aria-label={`Go to slide ${idx + 1}`}
+                  />
+                ))}
               </div>
 
-              {/* Mobile Slide Indicator Dots & Arrows */}
-              <div className="pt-1 flex items-center justify-center gap-3">
-                <button
-                  onClick={() => setCurrentSlide((prev) => (prev === 0 ? OFFERS.length - 1 : prev - 1))}
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-ivory/60 hover:text-champagne active:scale-95 cursor-pointer"
-                  aria-label="Previous Offer"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </button>
-
-                <div className="flex items-center gap-2">
-                  {OFFERS.map((_, idx) => (
-                    <button
-                      key={idx}
-                      onClick={() => setCurrentSlide(idx)}
-                      className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                        currentSlide === idx ? 'w-6 bg-champagne shadow-gold-glow' : 'w-1.5 bg-ivory/30'
-                      }`}
-                      aria-label={`Go to slide ${idx + 1}`}
-                    />
-                  ))}
-                </div>
-
-                <button
-                  onClick={() => setCurrentSlide((prev) => (prev + 1) % OFFERS.length)}
-                  className="w-7 h-7 rounded-full flex items-center justify-center text-ivory/60 hover:text-champagne active:scale-95 cursor-pointer"
-                  aria-label="Next Offer"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  setCurrentSlide((prev) => (prev + 1) % OFFERS.length);
+                }}
+                className="w-6 h-6 rounded-full bg-black/65 backdrop-blur-md text-ivory/80 hover:text-champagne flex items-center justify-center border border-champagne/30 active:scale-95 transition-all cursor-pointer"
+                aria-label="Next Offer"
+              >
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
             </div>
           </div>
 
