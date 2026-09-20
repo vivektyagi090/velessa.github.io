@@ -8,6 +8,12 @@ import categoryRingsImg from '../../assets/images/categories/category_rings.jpg'
 import categoryBanglesImg from '../../assets/images/categories/category_bangles.jpg';
 import categoryMangalsutrasImg from '../../assets/images/categories/category_mangalsutras.jpg';
 import categoryNecklacesImg from '../../assets/images/categories/category_necklaces.jpg';
+import categoryPendantsImg from '../../assets/images/categories/category_pendants.jpg';
+import categoryBraceletsImg from '../../assets/images/categories/category_bracelets.jpg';
+import categoryMaangtikkaImg from '../../assets/images/categories/category_maangtikka.jpg';
+import categoryPayalImg from '../../assets/images/categories/category_payal.jpg';
+import categoryNathImg from '../../assets/images/categories/category_nath.jpg';
+import categoryFormingImg from '../../assets/images/categories/category_forming.jpg';
 
 interface CategoryItem {
   id: string;
@@ -74,6 +80,60 @@ const QUICK_CATEGORIES: CategoryItem[] = [
     link: '/shop?category=Necklaces',
     count: '20+ Designs',
   },
+  {
+    id: 'pendants',
+    name: 'Pendants',
+    tagline: 'Solitaire & Drop Chains',
+    badge: 'New',
+    image: categoryPendantsImg,
+    link: '/shop?category=Pendants',
+    count: '15+ Designs',
+  },
+  {
+    id: 'bracelets',
+    name: 'Bracelets',
+    tagline: 'Tennis & Charm Chains',
+    badge: 'Trending',
+    image: categoryBraceletsImg,
+    link: '/shop?category=Bracelets',
+    count: '12+ Designs',
+  },
+  {
+    id: 'maangtikka',
+    name: 'Maang Tikka',
+    tagline: 'Matha Patti & Borla',
+    badge: 'Heritage',
+    image: categoryMaangtikkaImg,
+    link: '/shop?category=Necklaces',
+    count: '10+ Designs',
+  },
+  {
+    id: 'payal',
+    name: 'Anklets (Payal)',
+    tagline: 'Ghungroo & Filigree',
+    badge: 'Classic',
+    image: categoryPayalImg,
+    link: '/shop?category=Bangles',
+    count: '10+ Designs',
+  },
+  {
+    id: 'nath',
+    name: 'Nose Rings (Nath)',
+    tagline: 'Bridal Kundan & Pearls',
+    badge: 'Royal',
+    image: categoryNathImg,
+    link: '/shop?category=Earrings',
+    count: '8+ Designs',
+  },
+  {
+    id: 'forming',
+    name: '1 Gram Gold',
+    tagline: '24K Micro Gold Plated',
+    badge: 'Exclusive',
+    image: categoryFormingImg,
+    link: '/shop?category=1+Gram+Gold+Forming',
+    count: '35+ Designs',
+  },
 ];
 
 export const CategoryQuickStrip: React.FC = () => {
@@ -81,7 +141,7 @@ export const CategoryQuickStrip: React.FC = () => {
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (!scrollContainerRef.current) return;
-    const amount = direction === 'left' ? -280 : 280;
+    const amount = direction === 'left' ? -380 : 380;
     scrollContainerRef.current.scrollBy({ left: amount, behavior: 'smooth' });
   };
 
@@ -97,7 +157,7 @@ export const CategoryQuickStrip: React.FC = () => {
               Explore Collections
             </h2>
             <span className="hidden sm:inline-block text-[11px] text-charcoal-muted font-sans border-l border-beige pl-2">
-              Handcrafted 1 Gram Gold Forming
+              12 Atelier Departments • Handcrafted 1 Gram Gold Forming
             </span>
           </div>
 
@@ -106,25 +166,27 @@ export const CategoryQuickStrip: React.FC = () => {
               to="/shop"
               className="text-[11px] sm:text-xs font-sans text-champagne-dark hover:text-charcoal font-medium flex items-center gap-1 group transition-colors"
             >
-              <span>View All</span>
+              <span>View All ({QUICK_CATEGORIES.length})</span>
               <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
             </Link>
 
             {/* Desktop Navigation Chevrons */}
-            <div className="hidden md:flex items-center gap-1 ml-2">
+            <div className="hidden md:flex items-center gap-1.5 ml-2">
               <button
                 type="button"
                 onClick={() => handleScroll('left')}
-                className="w-7 h-7 rounded-full border border-beige hover:border-champagne bg-white hover:bg-beige/20 text-charcoal flex items-center justify-center transition-colors shadow-2xs cursor-pointer active:scale-95"
+                className="w-8 h-8 rounded-full border border-beige hover:border-champagne bg-white hover:bg-beige/20 text-charcoal flex items-center justify-center transition-all shadow-2xs hover:shadow-xs cursor-pointer active:scale-95"
                 aria-label="Previous categories"
+                title="Scroll Left"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
               <button
                 type="button"
                 onClick={() => handleScroll('right')}
-                className="w-7 h-7 rounded-full border border-beige hover:border-champagne bg-white hover:bg-beige/20 text-charcoal flex items-center justify-center transition-colors shadow-2xs cursor-pointer active:scale-95"
+                className="w-8 h-8 rounded-full border border-beige hover:border-champagne bg-white hover:bg-beige/20 text-charcoal flex items-center justify-center transition-all shadow-2xs hover:shadow-xs cursor-pointer active:scale-95"
                 aria-label="Next categories"
+                title="Scroll Right"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -132,16 +194,16 @@ export const CategoryQuickStrip: React.FC = () => {
           </div>
         </div>
 
-        {/* Scrollable / Grid Category Showcase */}
+        {/* Scrollable Category Showcase */}
         <div
           ref={scrollContainerRef}
-          className="flex items-start gap-3 sm:gap-4 lg:gap-6 overflow-x-auto scrollbar-none pb-2 pt-1 px-1 snap-x snap-mandatory scroll-smooth"
+          className="flex items-start gap-3 sm:gap-4 lg:gap-5 overflow-x-auto scrollbar-none pb-2 pt-1 px-1 snap-x snap-mandatory scroll-smooth"
         >
           {QUICK_CATEGORIES.map((cat) => (
             <Link
               key={cat.id}
               to={cat.link}
-              className="group flex flex-col items-center shrink-0 snap-start w-[102px] xs:w-[116px] sm:w-[142px] md:w-[160px] cursor-pointer text-center select-none"
+              className="group flex flex-col items-center shrink-0 snap-start w-[102px] xs:w-[116px] sm:w-[136px] md:w-[148px] lg:w-[160px] cursor-pointer text-center select-none"
             >
               {/* Image Frame with Dual-Border & Gold Glow */}
               <div className="relative w-full aspect-square rounded-xl sm:rounded-2xl overflow-hidden bg-[#F8F5EE] border border-beige hover:border-champagne shadow-xs group-hover:shadow-gold-glow transition-all duration-300">
